@@ -1,0 +1,95 @@
+﻿@model IEnumerable<SeniorDesignWebApp.Models.ArrestChargeDetailsModel>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ChargeDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ArrestDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Role)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LaborTrafficking)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MinorSexTrafficking)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AdultSexTrafficking)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FelonyCounts)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MisdemeanorCounts)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FelonySentences)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MisdemeanorSentences)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChargeDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ArrestDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Role)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LaborTrafficking)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MinorSexTrafficking)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdultSexTrafficking)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FelonyCounts)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MisdemeanorCounts)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FelonySentences)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MisdemeanorSentences)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

@@ -1,0 +1,104 @@
+﻿@model SeniorDesignWebApp.Models.ChargeModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>ChargeModel</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.ACD_Id)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ACD_Id)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Counts)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Counts)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Statute)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Statute)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Details)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Details)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Plea)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Plea)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Disposition)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Disposition)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Sentence)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Sentence)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Suspension)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Suspension)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Probation)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Probation)
+            </dd>
+    
+        </dl>
+    
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+    
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+</body>
+</html>

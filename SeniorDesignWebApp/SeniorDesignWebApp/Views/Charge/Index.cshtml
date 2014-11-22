@@ -1,0 +1,89 @@
+﻿@model IEnumerable<SeniorDesignWebApp.Models.ChargeModel>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ACD_Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Counts)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Statute)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Details)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Plea)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Disposition)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sentence)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Suspension)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Probation)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ACD_Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Counts)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Statute)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Details)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Plea)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Disposition)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sentence)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Suspension)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Probation)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

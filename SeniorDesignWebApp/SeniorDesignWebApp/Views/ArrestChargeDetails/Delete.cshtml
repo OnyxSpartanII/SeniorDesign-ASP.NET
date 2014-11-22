@@ -1,0 +1,112 @@
+﻿@model SeniorDesignWebApp.Models.ArrestChargeDetailsModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>ArrestChargeDetailsModel</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.ChargeDate)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ChargeDate)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ArrestDate)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ArrestDate)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Role)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Role)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.LaborTrafficking)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.LaborTrafficking)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.MinorSexTrafficking)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.MinorSexTrafficking)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.AdultSexTrafficking)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.AdultSexTrafficking)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.FelonyCounts)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.FelonyCounts)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.MisdemeanorCounts)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.MisdemeanorCounts)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.FelonySentences)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.FelonySentences)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.MisdemeanorSentences)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.MisdemeanorSentences)
+            </dd>
+    
+        </dl>
+    
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+    
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+</body>
+</html>
