@@ -202,11 +202,39 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ArrestChargeDetailsController.cs" />
+    <Compile Include="Controllers\BailController.cs" />
+    <Compile Include="Controllers\CaseController.cs" />
+    <Compile Include="Controllers\ChargeController.cs" />
+    <Compile Include="Controllers\CourtController.cs" />
+    <Compile Include="Controllers\DefendantController.cs" />
+    <Compile Include="Controllers\DefenseController.cs" />
+    <Compile Include="Controllers\HearingController.cs" />
     <Compile Include="Controllers\IDatabaseModelsController.cs" />
+    <Compile Include="Controllers\JudgeController.cs" />
+    <Compile Include="Controllers\MotionController.cs" />
+    <Compile Include="Controllers\OrganizedCrimeGroupController.cs" />
+    <Compile Include="Controllers\ProsecutorController.cs" />
+    <Compile Include="Controllers\SentenceController.cs" />
+    <Compile Include="Controllers\VictimController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ArrestChargeDetailsModel.cs" />
+    <Compile Include="Models\BailModel.cs" />
+    <Compile Include="Models\CaseModel.cs" />
+    <Compile Include="Models\ChargeModel.cs" />
+    <Compile Include="Models\CourtModel.cs" />
+    <Compile Include="Models\DefenseModel.cs" />
+    <Compile Include="Models\HearingModel.cs" />
+    <Compile Include="Models\JudgeModel.cs" />
+    <Compile Include="Models\DefendantModel.cs" />
     <Compile Include="Models\IDatabaseModel.cs" />
+    <Compile Include="Models\MotionModel.cs" />
+    <Compile Include="Models\OrganizedCrimeGroupModel.cs" />
+    <Compile Include="Models\ProsecutorModel.cs" />
+    <Compile Include="Models\SentenceModel.cs" />
+    <Compile Include="Models\VictimModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -296,6 +324,85 @@
     <Content Include="Views\IDatabaseModels\Details.cshtml" />
     <Content Include="Views\IDatabaseModels\Edit.cshtml" />
     <Content Include="Views\IDatabaseModels\Index.cshtml" />
+    <Content Include="Views\Defendant\Create.cshtml" />
+    <Content Include="Views\Defendant\Delete.cshtml" />
+    <Content Include="Views\Defendant\Details.cshtml" />
+    <Content Include="Views\Defendant\Edit.cshtml" />
+    <Content Include="Views\Defendant\Index.cshtml" />
+    <Content Include="Views\Prosecutor\Create.cshtml" />
+    <Content Include="Views\Prosecutor\Delete.cshtml" />
+    <Content Include="Views\Prosecutor\Details.cshtml" />
+    <Content Include="Views\Prosecutor\Edit.cshtml" />
+    <Content Include="Views\Prosecutor\Index.cshtml" />
+    <Content Include="Views\Judge\Create.cshtml" />
+    <Content Include="Views\Judge\Delete.cshtml" />
+    <Content Include="Views\Judge\Details.cshtml" />
+    <Content Include="Views\Judge\Edit.cshtml" />
+    <Content Include="Views\Judge\Index.cshtml" />
+    <Content Include="Views\OrganizedCrimeGroup\Create.cshtml" />
+    <Content Include="Views\OrganizedCrimeGroup\Delete.cshtml" />
+    <Content Include="Views\OrganizedCrimeGroup\Details.cshtml" />
+    <Content Include="Views\OrganizedCrimeGroup\Edit.cshtml" />
+    <Content Include="Views\OrganizedCrimeGroup\Index.cshtml" />
+    <Content Include="Views\ArrestChargeDetails\Create.cshtml" />
+    <Content Include="Views\ArrestChargeDetails\Delete.cshtml" />
+    <Content Include="Views\ArrestChargeDetails\Details.cshtml" />
+    <Content Include="Views\ArrestChargeDetails\Edit.cshtml" />
+    <Content Include="Views\ArrestChargeDetails\Index.cshtml" />
+    <Content Include="Views\Bail\Create.cshtml" />
+    <Content Include="Views\Bail\Delete.cshtml" />
+    <Content Include="Views\Bail\Details.cshtml" />
+    <Content Include="Views\Bail\Edit.cshtml" />
+    <Content Include="Views\Bail\Index.cshtml" />
+    <Content Include="Views\Case\Create.cshtml" />
+    <Content Include="Views\Case\Delete.cshtml" />
+    <Content Include="Views\Case\Details.cshtml" />
+    <Content Include="Views\Case\Edit.cshtml" />
+    <Content Include="Views\Case\Index.cshtml" />
+    <Content Include="Views\Charge\Create.cshtml" />
+    <Content Include="Views\Charge\Delete.cshtml" />
+    <Content Include="Views\Charge\Details.cshtml" />
+    <Content Include="Views\Charge\Edit.cshtml" />
+    <Content Include="Views\Charge\Index.cshtml" />
+    <Content Include="Views\Court\Create.cshtml" />
+    <Content Include="Views\Court\Delete.cshtml" />
+    <Content Include="Views\Court\Details.cshtml" />
+    <Content Include="Views\Court\Edit.cshtml" />
+    <Content Include="Views\Court\Index.cshtml" />
+    <Content Include="Views\Defense\Create.cshtml" />
+    <Content Include="Views\Defense\Delete.cshtml" />
+    <Content Include="Views\Defense\Details.cshtml" />
+    <Content Include="Views\Defense\Edit.cshtml" />
+    <Content Include="Views\Defense\Index.cshtml" />
+    <Content Include="Views\Hearing\Create.cshtml" />
+    <Content Include="Views\Hearing\Delete.cshtml" />
+    <Content Include="Views\Hearing\Details.cshtml" />
+    <Content Include="Views\Hearing\Edit.cshtml" />
+    <Content Include="Views\Hearing\Index.cshtml" />
+    <Content Include="Views\Motion\Create.cshtml" />
+    <Content Include="Views\Motion\Delete.cshtml" />
+    <Content Include="Views\Motion\Details.cshtml" />
+    <Content Include="Views\Motion\Edit.cshtml" />
+    <Content Include="Views\Motion\Index.cshtml" />
+    <Content Include="Views\Sentence\Create.cshtml" />
+    <Content Include="Views\Sentence\Delete.cshtml" />
+    <Content Include="Views\Sentence\Details.cshtml" />
+    <Content Include="Views\Sentence\Edit.cshtml" />
+    <Content Include="Views\Sentence\Index.cshtml" />
+    <Content Include="Views\Victim\Create.cshtml" />
+    <Content Include="Views\Victim\Delete.cshtml" />
+    <Content Include="Views\Victim\Details.cshtml" />
+    <Content Include="Views\Victim\Edit.cshtml" />
+    <Content Include="Views\Victim\Index.cshtml" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Views\Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Views\Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
