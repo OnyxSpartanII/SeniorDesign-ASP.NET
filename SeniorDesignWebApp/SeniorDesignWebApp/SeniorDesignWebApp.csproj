@@ -394,15 +394,7 @@
     <Content Include="Views\Victim\Details.cshtml" />
     <Content Include="Views\Victim\Edit.cshtml" />
     <Content Include="Views\Victim\Index.cshtml" />
-    <Content Include="Views\Web.config">
-      <SubType>Designer</SubType>
-    </Content>
-    <None Include="Views\Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Views\Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
+    <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
