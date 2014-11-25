@@ -1,0 +1,1126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="judgefrogModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="arrestchargedetails">
+          <Key>
+            <PropertyRef Name="ACDId" />
+          </Key>
+          <Property Name="ACDId" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ChargeDate" Type="date" Nullable="false" />
+          <Property Name="ArrestDate" Type="date" Nullable="false" />
+          <Property Name="BailId" Type="uint" Nullable="false" />
+          <Property Name="Role" Type="bool" Nullable="false" />
+        </EntityType>
+        <EntityType Name="bail">
+          <Key>
+            <PropertyRef Name="BailId" />
+          </Key>
+          <Property Name="BailId" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Type" Type="bool" Nullable="false" />
+          <Property Name="Detained" Type="bool" Nullable="false" />
+          <Property Name="Amount" Type="double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="case_has_defendant">
+          <Key>
+            <PropertyRef Name="Case_CaseId" />
+            <PropertyRef Name="Defendant_DefendantId" />
+          </Key>
+          <Property Name="Case_CaseId" Type="uint" Nullable="false" />
+          <Property Name="Defendant_DefendantId" Type="uint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="case_has_hearing">
+          <Key>
+            <PropertyRef Name="Case_CaseId" />
+            <PropertyRef Name="Hearing_HearingId" />
+          </Key>
+          <Property Name="Case_CaseId" Type="uint" Nullable="false" />
+          <Property Name="Hearing_HearingId" Type="uint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="case_has_judge">
+          <Key>
+            <PropertyRef Name="Case_CaseId" />
+            <PropertyRef Name="Judge_JudgeId" />
+          </Key>
+          <Property Name="Case_CaseId" Type="uint" Nullable="false" />
+          <Property Name="Judge_JudgeId" Type="uint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="case_has_motion">
+          <Key>
+            <PropertyRef Name="Case_CaseId" />
+            <PropertyRef Name="Motion_MotionId" />
+          </Key>
+          <Property Name="Case_CaseId" Type="uint" Nullable="false" />
+          <Property Name="Motion_MotionId" Type="uint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="case_has_organizedcrimegroup">
+          <Key>
+            <PropertyRef Name="Case_CaseId" />
+            <PropertyRef Name="OrganizedCrimeGroup_OCGId" />
+          </Key>
+          <Property Name="Case_CaseId" Type="uint" Nullable="false" />
+          <Property Name="OrganizedCrimeGroup_OCGId" Type="uint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="case_has_prosecutor">
+          <Key>
+            <PropertyRef Name="Case_CaseId" />
+            <PropertyRef Name="Prosecutor_ProsecutorId" />
+          </Key>
+          <Property Name="Case_CaseId" Type="uint" Nullable="false" />
+          <Property Name="Prosecutor_ProsecutorId" Type="uint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="casetable">
+          <Key>
+            <PropertyRef Name="CaseId" />
+          </Key>
+          <Property Name="CaseId" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="64" Nullable="false" />
+          <Property Name="Number" Type="varchar" MaxLength="64" Nullable="false" />
+          <Property Name="Status" Type="bool" Nullable="false" />
+          <Property Name="Summary" Type="longtext" />
+          <Property Name="GrandJury" Type="bool" Nullable="false" />
+          <Property Name="CourtId" Type="uint" Nullable="false" />
+          <Property Name="DefenseId" Type="uint" Nullable="false" />
+          <Property Name="VictimsId" Type="uint" Nullable="false" />
+          <Property Name="ACDId" Type="uint" Nullable="false" />
+          <Property Name="SentenceId" Type="uint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="charge">
+          <Key>
+            <PropertyRef Name="ChargeId" />
+            <PropertyRef Name="Type" />
+          </Key>
+          <Property Name="ChargeId" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Type" Type="int" Nullable="false" />
+          <Property Name="ArrestChargeDetails_Id" Type="uint" Nullable="false" />
+          <Property Name="Counts" Type="uint" Nullable="false" />
+          <Property Name="Statute" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Details" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Plea" Type="int" Nullable="false" />
+          <Property Name="Disposition" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="court">
+          <Key>
+            <PropertyRef Name="CourtId" />
+          </Key>
+          <Property Name="CourtId" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="45" />
+          <Property Name="Type" Type="varchar" MaxLength="45" />
+          <Property Name="State" Type="varchar" MaxLength="45" />
+          <Property Name="County" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="defendant">
+          <Key>
+            <PropertyRef Name="DefendantId" />
+          </Key>
+          <Property Name="DefendantId" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Firstname" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Lastname" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Gender" Type="bool" Nullable="false" />
+          <Property Name="Age" Type="int" Nullable="false" />
+          <Property Name="Race" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="defense">
+          <Key>
+            <PropertyRef Name="DefenseId" />
+          </Key>
+          <Property Name="DefenseId" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Gender" Type="bool" Nullable="false" />
+          <Property Name="Career" Type="int" Nullable="false" />
+          <Property Name="Counsel" Type="bool" Nullable="false" />
+        </EntityType>
+        <EntityType Name="hearing">
+          <Key>
+            <PropertyRef Name="HearingId" />
+          </Key>
+          <Property Name="HearingId" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Type" Type="int" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="judge">
+          <Key>
+            <PropertyRef Name="JudgeId" />
+          </Key>
+          <Property Name="JudgeId" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="64" Nullable="false" />
+          <Property Name="Race" Type="int" Nullable="false" />
+          <Property Name="Gender" Type="bool" Nullable="false" />
+          <Property Name="Career" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="motion">
+          <Key>
+            <PropertyRef Name="MotionId" />
+          </Key>
+          <Property Name="MotionId" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Type" Type="int" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="organizedcrimegroup">
+          <Key>
+            <PropertyRef Name="OCGId" />
+          </Key>
+          <Property Name="OCGId" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Size" Type="int" Nullable="false" />
+          <Property Name="Scope" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="prosecutor">
+          <Key>
+            <PropertyRef Name="ProsecutorId" />
+          </Key>
+          <Property Name="ProsecutorId" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Gender" Type="bool" Nullable="false" />
+          <Property Name="Career" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sentence">
+          <Key>
+            <PropertyRef Name="SentenceId" />
+          </Key>
+          <Property Name="SentenceId" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DispositionDate" Type="date" Nullable="false" />
+          <Property Name="SentenceDate" Type="date" Nullable="false" />
+          <Property Name="JailTime" Type="int" Nullable="false" />
+          <Property Name="ProbationTime" Type="int" Nullable="false" />
+          <Property Name="SuspendedTime" Type="int" Nullable="false" />
+          <Property Name="Fines" Type="double" Nullable="false" />
+          <Property Name="CommServ" Type="int" Nullable="false" />
+          <Property Name="COR" Type="bool" Nullable="false" />
+          <Property Name="CCD_Id" Type="bool" Nullable="false" />
+        </EntityType>
+        <EntityType Name="victims">
+          <Key>
+            <PropertyRef Name="VictimsId" />
+          </Key>
+          <Property Name="VictimsId" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Total" Type="int" Nullable="false" />
+          <Property Name="Minor" Type="int" Nullable="false" />
+          <Property Name="Foreigner" Type="int" Nullable="false" />
+          <Property Name="Female" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="fk_ArrestChargeDetails_BailId">
+          <End Role="bail" Type="Self.bail" Multiplicity="1" />
+          <End Role="arrestchargedetails" Type="Self.arrestchargedetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bail">
+              <PropertyRef Name="BailId" />
+            </Principal>
+            <Dependent Role="arrestchargedetails">
+              <PropertyRef Name="BailId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Case_ACDId">
+          <End Role="arrestchargedetails" Type="Self.arrestchargedetails" Multiplicity="1" />
+          <End Role="casetable" Type="Self.casetable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="arrestchargedetails">
+              <PropertyRef Name="ACDId" />
+            </Principal>
+            <Dependent Role="casetable">
+              <PropertyRef Name="ACDId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Case_CourtId">
+          <End Role="court" Type="Self.court" Multiplicity="1" />
+          <End Role="casetable" Type="Self.casetable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="court">
+              <PropertyRef Name="CourtId" />
+            </Principal>
+            <Dependent Role="casetable">
+              <PropertyRef Name="CourtId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Case_DefenseId">
+          <End Role="defense" Type="Self.defense" Multiplicity="1" />
+          <End Role="casetable" Type="Self.casetable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="defense">
+              <PropertyRef Name="DefenseId" />
+            </Principal>
+            <Dependent Role="casetable">
+              <PropertyRef Name="DefenseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Case_has_Defendant_Case">
+          <End Role="casetable" Type="Self.casetable" Multiplicity="1" />
+          <End Role="case_has_defendant" Type="Self.case_has_defendant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="casetable">
+              <PropertyRef Name="CaseId" />
+            </Principal>
+            <Dependent Role="case_has_defendant">
+              <PropertyRef Name="Case_CaseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Case_has_Defendant_Defendant1">
+          <End Role="defendant" Type="Self.defendant" Multiplicity="1" />
+          <End Role="case_has_defendant" Type="Self.case_has_defendant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="defendant">
+              <PropertyRef Name="DefendantId" />
+            </Principal>
+            <Dependent Role="case_has_defendant">
+              <PropertyRef Name="Defendant_DefendantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Case_has_Hearing_Case1">
+          <End Role="casetable" Type="Self.casetable" Multiplicity="1" />
+          <End Role="case_has_hearing" Type="Self.case_has_hearing" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="casetable">
+              <PropertyRef Name="CaseId" />
+            </Principal>
+            <Dependent Role="case_has_hearing">
+              <PropertyRef Name="Case_CaseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Case_has_Hearing_Hearing1">
+          <End Role="hearing" Type="Self.hearing" Multiplicity="1" />
+          <End Role="case_has_hearing" Type="Self.case_has_hearing" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="hearing">
+              <PropertyRef Name="HearingId" />
+            </Principal>
+            <Dependent Role="case_has_hearing">
+              <PropertyRef Name="Hearing_HearingId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Case_has_Judge_Case1">
+          <End Role="casetable" Type="Self.casetable" Multiplicity="1" />
+          <End Role="case_has_judge" Type="Self.case_has_judge" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="casetable">
+              <PropertyRef Name="CaseId" />
+            </Principal>
+            <Dependent Role="case_has_judge">
+              <PropertyRef Name="Case_CaseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Case_has_Judge_Judge1">
+          <End Role="judge" Type="Self.judge" Multiplicity="1" />
+          <End Role="case_has_judge" Type="Self.case_has_judge" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="judge">
+              <PropertyRef Name="JudgeId" />
+            </Principal>
+            <Dependent Role="case_has_judge">
+              <PropertyRef Name="Judge_JudgeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Case_has_Motion_Case1">
+          <End Role="casetable" Type="Self.casetable" Multiplicity="1" />
+          <End Role="case_has_motion" Type="Self.case_has_motion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="casetable">
+              <PropertyRef Name="CaseId" />
+            </Principal>
+            <Dependent Role="case_has_motion">
+              <PropertyRef Name="Case_CaseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Case_has_Motion_Motion1">
+          <End Role="motion" Type="Self.motion" Multiplicity="1" />
+          <End Role="case_has_motion" Type="Self.case_has_motion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="motion">
+              <PropertyRef Name="MotionId" />
+            </Principal>
+            <Dependent Role="case_has_motion">
+              <PropertyRef Name="Motion_MotionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Case_has_OrganizedCrimeGroup_Case1">
+          <End Role="casetable" Type="Self.casetable" Multiplicity="1" />
+          <End Role="case_has_organizedcrimegroup" Type="Self.case_has_organizedcrimegroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="casetable">
+              <PropertyRef Name="CaseId" />
+            </Principal>
+            <Dependent Role="case_has_organizedcrimegroup">
+              <PropertyRef Name="Case_CaseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Case_has_OrganizedCrimeGroup_OrganizedCrimeGroup1">
+          <End Role="organizedcrimegroup" Type="Self.organizedcrimegroup" Multiplicity="1" />
+          <End Role="case_has_organizedcrimegroup" Type="Self.case_has_organizedcrimegroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="organizedcrimegroup">
+              <PropertyRef Name="OCGId" />
+            </Principal>
+            <Dependent Role="case_has_organizedcrimegroup">
+              <PropertyRef Name="OrganizedCrimeGroup_OCGId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Case_has_Prosecutor_Case1">
+          <End Role="casetable" Type="Self.casetable" Multiplicity="1" />
+          <End Role="case_has_prosecutor" Type="Self.case_has_prosecutor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="casetable">
+              <PropertyRef Name="CaseId" />
+            </Principal>
+            <Dependent Role="case_has_prosecutor">
+              <PropertyRef Name="Case_CaseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Case_has_Prosecutor_Prosecutor1">
+          <End Role="prosecutor" Type="Self.prosecutor" Multiplicity="1" />
+          <End Role="case_has_prosecutor" Type="Self.case_has_prosecutor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="prosecutor">
+              <PropertyRef Name="ProsecutorId" />
+            </Principal>
+            <Dependent Role="case_has_prosecutor">
+              <PropertyRef Name="Prosecutor_ProsecutorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Case_SentenceId">
+          <End Role="sentence" Type="Self.sentence" Multiplicity="1" />
+          <End Role="casetable" Type="Self.casetable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sentence">
+              <PropertyRef Name="SentenceId" />
+            </Principal>
+            <Dependent Role="casetable">
+              <PropertyRef Name="SentenceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Case_VictimsId">
+          <End Role="victims" Type="Self.victims" Multiplicity="1" />
+          <End Role="casetable" Type="Self.casetable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="victims">
+              <PropertyRef Name="VictimsId" />
+            </Principal>
+            <Dependent Role="casetable">
+              <PropertyRef Name="VictimsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Charge_ArrestChargeDetails1">
+          <End Role="arrestchargedetails" Type="Self.arrestchargedetails" Multiplicity="1" />
+          <End Role="charge" Type="Self.charge" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="arrestchargedetails">
+              <PropertyRef Name="ACDId" />
+            </Principal>
+            <Dependent Role="charge">
+              <PropertyRef Name="ArrestChargeDetails_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="judgefrogModelStoreContainer">
+          <EntitySet Name="arrestchargedetails" EntityType="Self.arrestchargedetails" Schema="judgefrog" store:Type="Tables" />
+          <EntitySet Name="bail" EntityType="Self.bail" Schema="judgefrog" store:Type="Tables" />
+          <EntitySet Name="case_has_defendant" EntityType="Self.case_has_defendant" Schema="judgefrog" store:Type="Tables" />
+          <EntitySet Name="case_has_hearing" EntityType="Self.case_has_hearing" Schema="judgefrog" store:Type="Tables" />
+          <EntitySet Name="case_has_judge" EntityType="Self.case_has_judge" Schema="judgefrog" store:Type="Tables" />
+          <EntitySet Name="case_has_motion" EntityType="Self.case_has_motion" Schema="judgefrog" store:Type="Tables" />
+          <EntitySet Name="case_has_organizedcrimegroup" EntityType="Self.case_has_organizedcrimegroup" Schema="judgefrog" store:Type="Tables" />
+          <EntitySet Name="case_has_prosecutor" EntityType="Self.case_has_prosecutor" Schema="judgefrog" store:Type="Tables" />
+          <EntitySet Name="casetable" EntityType="Self.casetable" Schema="judgefrog" store:Type="Tables" />
+          <EntitySet Name="charge" EntityType="Self.charge" Schema="judgefrog" store:Type="Tables" />
+          <EntitySet Name="court" EntityType="Self.court" Schema="judgefrog" store:Type="Tables" />
+          <EntitySet Name="defendant" EntityType="Self.defendant" Schema="judgefrog" store:Type="Tables" />
+          <EntitySet Name="defense" EntityType="Self.defense" Schema="judgefrog" store:Type="Tables" />
+          <EntitySet Name="hearing" EntityType="Self.hearing" Schema="judgefrog" store:Type="Tables" />
+          <EntitySet Name="judge" EntityType="Self.judge" Schema="judgefrog" store:Type="Tables" />
+          <EntitySet Name="motion" EntityType="Self.motion" Schema="judgefrog" store:Type="Tables" />
+          <EntitySet Name="organizedcrimegroup" EntityType="Self.organizedcrimegroup" Schema="judgefrog" store:Type="Tables" />
+          <EntitySet Name="prosecutor" EntityType="Self.prosecutor" Schema="judgefrog" store:Type="Tables" />
+          <EntitySet Name="sentence" EntityType="Self.sentence" Schema="judgefrog" store:Type="Tables" />
+          <EntitySet Name="victims" EntityType="Self.victims" Schema="judgefrog" store:Type="Tables" />
+          <AssociationSet Name="fk_ArrestChargeDetails_BailId" Association="Self.fk_ArrestChargeDetails_BailId">
+            <End Role="bail" EntitySet="bail" />
+            <End Role="arrestchargedetails" EntitySet="arrestchargedetails" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Case_ACDId" Association="Self.fk_Case_ACDId">
+            <End Role="arrestchargedetails" EntitySet="arrestchargedetails" />
+            <End Role="casetable" EntitySet="casetable" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Case_CourtId" Association="Self.fk_Case_CourtId">
+            <End Role="court" EntitySet="court" />
+            <End Role="casetable" EntitySet="casetable" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Case_DefenseId" Association="Self.fk_Case_DefenseId">
+            <End Role="defense" EntitySet="defense" />
+            <End Role="casetable" EntitySet="casetable" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Case_has_Defendant_Case" Association="Self.fk_Case_has_Defendant_Case">
+            <End Role="casetable" EntitySet="casetable" />
+            <End Role="case_has_defendant" EntitySet="case_has_defendant" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Case_has_Defendant_Defendant1" Association="Self.fk_Case_has_Defendant_Defendant1">
+            <End Role="defendant" EntitySet="defendant" />
+            <End Role="case_has_defendant" EntitySet="case_has_defendant" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Case_has_Hearing_Case1" Association="Self.fk_Case_has_Hearing_Case1">
+            <End Role="casetable" EntitySet="casetable" />
+            <End Role="case_has_hearing" EntitySet="case_has_hearing" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Case_has_Hearing_Hearing1" Association="Self.fk_Case_has_Hearing_Hearing1">
+            <End Role="hearing" EntitySet="hearing" />
+            <End Role="case_has_hearing" EntitySet="case_has_hearing" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Case_has_Judge_Case1" Association="Self.fk_Case_has_Judge_Case1">
+            <End Role="casetable" EntitySet="casetable" />
+            <End Role="case_has_judge" EntitySet="case_has_judge" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Case_has_Judge_Judge1" Association="Self.fk_Case_has_Judge_Judge1">
+            <End Role="judge" EntitySet="judge" />
+            <End Role="case_has_judge" EntitySet="case_has_judge" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Case_has_Motion_Case1" Association="Self.fk_Case_has_Motion_Case1">
+            <End Role="casetable" EntitySet="casetable" />
+            <End Role="case_has_motion" EntitySet="case_has_motion" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Case_has_Motion_Motion1" Association="Self.fk_Case_has_Motion_Motion1">
+            <End Role="motion" EntitySet="motion" />
+            <End Role="case_has_motion" EntitySet="case_has_motion" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Case_has_OrganizedCrimeGroup_Case1" Association="Self.fk_Case_has_OrganizedCrimeGroup_Case1">
+            <End Role="casetable" EntitySet="casetable" />
+            <End Role="case_has_organizedcrimegroup" EntitySet="case_has_organizedcrimegroup" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Case_has_OrganizedCrimeGroup_OrganizedCrimeGroup1" Association="Self.fk_Case_has_OrganizedCrimeGroup_OrganizedCrimeGroup1">
+            <End Role="organizedcrimegroup" EntitySet="organizedcrimegroup" />
+            <End Role="case_has_organizedcrimegroup" EntitySet="case_has_organizedcrimegroup" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Case_has_Prosecutor_Case1" Association="Self.fk_Case_has_Prosecutor_Case1">
+            <End Role="casetable" EntitySet="casetable" />
+            <End Role="case_has_prosecutor" EntitySet="case_has_prosecutor" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Case_has_Prosecutor_Prosecutor1" Association="Self.fk_Case_has_Prosecutor_Prosecutor1">
+            <End Role="prosecutor" EntitySet="prosecutor" />
+            <End Role="case_has_prosecutor" EntitySet="case_has_prosecutor" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Case_SentenceId" Association="Self.fk_Case_SentenceId">
+            <End Role="sentence" EntitySet="sentence" />
+            <End Role="casetable" EntitySet="casetable" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Case_VictimsId" Association="Self.fk_Case_VictimsId">
+            <End Role="victims" EntitySet="victims" />
+            <End Role="casetable" EntitySet="casetable" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Charge_ArrestChargeDetails1" Association="Self.fk_Charge_ArrestChargeDetails1">
+            <End Role="arrestchargedetails" EntitySet="arrestchargedetails" />
+            <End Role="charge" EntitySet="charge" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="judgefrogModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="arrestchargedetail">
+          <Key>
+            <PropertyRef Name="ACDId" />
+          </Key>
+          <Property Name="ACDId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ChargeDate" Type="DateTime" Nullable="false" />
+          <Property Name="ArrestDate" Type="DateTime" Nullable="false" />
+          <Property Name="BailId" Type="Int64" Nullable="false" />
+          <Property Name="Role" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="bail" Relationship="Self.fk_ArrestChargeDetails_BailId" FromRole="arrestchargedetails" ToRole="bail" />
+          <NavigationProperty Name="casetables" Relationship="Self.fk_Case_ACDId" FromRole="arrestchargedetails" ToRole="casetable" />
+          <NavigationProperty Name="charges" Relationship="Self.fk_Charge_ArrestChargeDetails1" FromRole="arrestchargedetails" ToRole="charge" />
+        </EntityType>
+        <EntityType Name="bail">
+          <Key>
+            <PropertyRef Name="BailId" />
+          </Key>
+          <Property Name="BailId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="Boolean" Nullable="false" />
+          <Property Name="Detained" Type="Boolean" Nullable="false" />
+          <Property Name="Amount" Type="Double" Nullable="false" />
+          <NavigationProperty Name="arrestchargedetails" Relationship="Self.fk_ArrestChargeDetails_BailId" FromRole="bail" ToRole="arrestchargedetails" />
+        </EntityType>
+        <EntityType Name="casetable">
+          <Key>
+            <PropertyRef Name="CaseId" />
+          </Key>
+          <Property Name="CaseId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Number" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+          <Property Name="Summary" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="GrandJury" Type="Boolean" Nullable="false" />
+          <Property Name="CourtId" Type="Int64" Nullable="false" />
+          <Property Name="DefenseId" Type="Int64" Nullable="false" />
+          <Property Name="VictimsId" Type="Int64" Nullable="false" />
+          <Property Name="ACDId" Type="Int64" Nullable="false" />
+          <Property Name="SentenceId" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="arrestchargedetail" Relationship="Self.fk_Case_ACDId" FromRole="casetable" ToRole="arrestchargedetails" />
+          <NavigationProperty Name="court" Relationship="Self.fk_Case_CourtId" FromRole="casetable" ToRole="court" />
+          <NavigationProperty Name="defense" Relationship="Self.fk_Case_DefenseId" FromRole="casetable" ToRole="defense" />
+          <NavigationProperty Name="sentence" Relationship="Self.fk_Case_SentenceId" FromRole="casetable" ToRole="sentence" />
+          <NavigationProperty Name="victim" Relationship="Self.fk_Case_VictimsId" FromRole="casetable" ToRole="victims" />
+          <NavigationProperty Name="defendants" Relationship="Self.case_has_defendant" FromRole="casetable" ToRole="defendant" />
+          <NavigationProperty Name="hearings" Relationship="Self.case_has_hearing" FromRole="casetable" ToRole="hearing" />
+          <NavigationProperty Name="judges" Relationship="Self.case_has_judge" FromRole="casetable" ToRole="judge" />
+          <NavigationProperty Name="motions" Relationship="Self.case_has_motion" FromRole="casetable" ToRole="motion" />
+          <NavigationProperty Name="organizedcrimegroups" Relationship="Self.case_has_organizedcrimegroup" FromRole="casetable" ToRole="organizedcrimegroup" />
+          <NavigationProperty Name="prosecutors" Relationship="Self.case_has_prosecutor" FromRole="casetable" ToRole="prosecutor" />
+        </EntityType>
+        <EntityType Name="charge">
+          <Key>
+            <PropertyRef Name="ChargeId" />
+            <PropertyRef Name="Type" />
+          </Key>
+          <Property Name="ChargeId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="Int32" Nullable="false" />
+          <Property Name="ArrestChargeDetails_Id" Type="Int64" Nullable="false" />
+          <Property Name="Counts" Type="Int64" Nullable="false" />
+          <Property Name="Statute" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Details" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Plea" Type="Int32" Nullable="false" />
+          <Property Name="Disposition" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="arrestchargedetail" Relationship="Self.fk_Charge_ArrestChargeDetails1" FromRole="charge" ToRole="arrestchargedetails" />
+        </EntityType>
+        <EntityType Name="court">
+          <Key>
+            <PropertyRef Name="CourtId" />
+          </Key>
+          <Property Name="CourtId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Type" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="State" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="County" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="casetables" Relationship="Self.fk_Case_CourtId" FromRole="court" ToRole="casetable" />
+        </EntityType>
+        <EntityType Name="defendant">
+          <Key>
+            <PropertyRef Name="DefendantId" />
+          </Key>
+          <Property Name="DefendantId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Firstname" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Lastname" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Gender" Type="Boolean" Nullable="false" />
+          <Property Name="Age" Type="Int32" Nullable="false" />
+          <Property Name="Race" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="casetables" Relationship="Self.case_has_defendant" FromRole="defendant" ToRole="casetable" />
+        </EntityType>
+        <EntityType Name="defense">
+          <Key>
+            <PropertyRef Name="DefenseId" />
+          </Key>
+          <Property Name="DefenseId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Gender" Type="Boolean" Nullable="false" />
+          <Property Name="Career" Type="Int32" Nullable="false" />
+          <Property Name="Counsel" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="casetables" Relationship="Self.fk_Case_DefenseId" FromRole="defense" ToRole="casetable" />
+        </EntityType>
+        <EntityType Name="hearing">
+          <Key>
+            <PropertyRef Name="HearingId" />
+          </Key>
+          <Property Name="HearingId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="casetables" Relationship="Self.case_has_hearing" FromRole="hearing" ToRole="casetable" />
+        </EntityType>
+        <EntityType Name="judge">
+          <Key>
+            <PropertyRef Name="JudgeId" />
+          </Key>
+          <Property Name="JudgeId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Race" Type="Int32" Nullable="false" />
+          <Property Name="Gender" Type="Boolean" Nullable="false" />
+          <Property Name="Career" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="casetables" Relationship="Self.case_has_judge" FromRole="judge" ToRole="casetable" />
+        </EntityType>
+        <EntityType Name="motion">
+          <Key>
+            <PropertyRef Name="MotionId" />
+          </Key>
+          <Property Name="MotionId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="casetables" Relationship="Self.case_has_motion" FromRole="motion" ToRole="casetable" />
+        </EntityType>
+        <EntityType Name="organizedcrimegroup">
+          <Key>
+            <PropertyRef Name="OCGId" />
+          </Key>
+          <Property Name="OCGId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Size" Type="Int32" Nullable="false" />
+          <Property Name="Scope" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="casetables" Relationship="Self.case_has_organizedcrimegroup" FromRole="organizedcrimegroup" ToRole="casetable" />
+        </EntityType>
+        <EntityType Name="prosecutor">
+          <Key>
+            <PropertyRef Name="ProsecutorId" />
+          </Key>
+          <Property Name="ProsecutorId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Gender" Type="Boolean" Nullable="false" />
+          <Property Name="Career" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="casetables" Relationship="Self.case_has_prosecutor" FromRole="prosecutor" ToRole="casetable" />
+        </EntityType>
+        <EntityType Name="sentence">
+          <Key>
+            <PropertyRef Name="SentenceId" />
+          </Key>
+          <Property Name="SentenceId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DispositionDate" Type="DateTime" Nullable="false" />
+          <Property Name="SentenceDate" Type="DateTime" Nullable="false" />
+          <Property Name="JailTime" Type="Int32" Nullable="false" />
+          <Property Name="ProbationTime" Type="Int32" Nullable="false" />
+          <Property Name="SuspendedTime" Type="Int32" Nullable="false" />
+          <Property Name="Fines" Type="Double" Nullable="false" />
+          <Property Name="CommServ" Type="Int32" Nullable="false" />
+          <Property Name="COR" Type="Boolean" Nullable="false" />
+          <Property Name="CCD_Id" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="casetables" Relationship="Self.fk_Case_SentenceId" FromRole="sentence" ToRole="casetable" />
+        </EntityType>
+        <EntityType Name="victim">
+          <Key>
+            <PropertyRef Name="VictimsId" />
+          </Key>
+          <Property Name="VictimsId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Total" Type="Int32" Nullable="false" />
+          <Property Name="Minor" Type="Int32" Nullable="false" />
+          <Property Name="Foreigner" Type="Int32" Nullable="false" />
+          <Property Name="Female" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="casetables" Relationship="Self.fk_Case_VictimsId" FromRole="victims" ToRole="casetable" />
+        </EntityType>
+        <Association Name="fk_ArrestChargeDetails_BailId">
+          <End Role="bail" Type="Self.bail" Multiplicity="1" />
+          <End Role="arrestchargedetails" Type="Self.arrestchargedetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bail">
+              <PropertyRef Name="BailId" />
+            </Principal>
+            <Dependent Role="arrestchargedetails">
+              <PropertyRef Name="BailId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Case_ACDId">
+          <End Role="arrestchargedetails" Type="Self.arrestchargedetail" Multiplicity="1" />
+          <End Role="casetable" Type="Self.casetable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="arrestchargedetails">
+              <PropertyRef Name="ACDId" />
+            </Principal>
+            <Dependent Role="casetable">
+              <PropertyRef Name="ACDId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Charge_ArrestChargeDetails1">
+          <End Role="arrestchargedetails" Type="Self.arrestchargedetail" Multiplicity="1" />
+          <End Role="charge" Type="Self.charge" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="arrestchargedetails">
+              <PropertyRef Name="ACDId" />
+            </Principal>
+            <Dependent Role="charge">
+              <PropertyRef Name="ArrestChargeDetails_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Case_CourtId">
+          <End Role="court" Type="Self.court" Multiplicity="1" />
+          <End Role="casetable" Type="Self.casetable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="court">
+              <PropertyRef Name="CourtId" />
+            </Principal>
+            <Dependent Role="casetable">
+              <PropertyRef Name="CourtId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Case_DefenseId">
+          <End Role="defense" Type="Self.defense" Multiplicity="1" />
+          <End Role="casetable" Type="Self.casetable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="defense">
+              <PropertyRef Name="DefenseId" />
+            </Principal>
+            <Dependent Role="casetable">
+              <PropertyRef Name="DefenseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Case_SentenceId">
+          <End Role="sentence" Type="Self.sentence" Multiplicity="1" />
+          <End Role="casetable" Type="Self.casetable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sentence">
+              <PropertyRef Name="SentenceId" />
+            </Principal>
+            <Dependent Role="casetable">
+              <PropertyRef Name="SentenceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Case_VictimsId">
+          <End Role="victims" Type="Self.victim" Multiplicity="1" />
+          <End Role="casetable" Type="Self.casetable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="victims">
+              <PropertyRef Name="VictimsId" />
+            </Principal>
+            <Dependent Role="casetable">
+              <PropertyRef Name="VictimsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="case_has_defendant">
+          <End Role="casetable" Type="Self.casetable" Multiplicity="*" />
+          <End Role="defendant" Type="Self.defendant" Multiplicity="*" />
+        </Association>
+        <Association Name="case_has_hearing">
+          <End Role="casetable" Type="Self.casetable" Multiplicity="*" />
+          <End Role="hearing" Type="Self.hearing" Multiplicity="*" />
+        </Association>
+        <Association Name="case_has_judge">
+          <End Role="casetable" Type="Self.casetable" Multiplicity="*" />
+          <End Role="judge" Type="Self.judge" Multiplicity="*" />
+        </Association>
+        <Association Name="case_has_motion">
+          <End Role="casetable" Type="Self.casetable" Multiplicity="*" />
+          <End Role="motion" Type="Self.motion" Multiplicity="*" />
+        </Association>
+        <Association Name="case_has_organizedcrimegroup">
+          <End Role="casetable" Type="Self.casetable" Multiplicity="*" />
+          <End Role="organizedcrimegroup" Type="Self.organizedcrimegroup" Multiplicity="*" />
+        </Association>
+        <Association Name="case_has_prosecutor">
+          <End Role="casetable" Type="Self.casetable" Multiplicity="*" />
+          <End Role="prosecutor" Type="Self.prosecutor" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="judgefrogEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="arrestchargedetails" EntityType="Self.arrestchargedetail" />
+          <EntitySet Name="bails" EntityType="Self.bail" />
+          <EntitySet Name="casetables" EntityType="Self.casetable" />
+          <EntitySet Name="charges" EntityType="Self.charge" />
+          <EntitySet Name="courts" EntityType="Self.court" />
+          <EntitySet Name="defendants" EntityType="Self.defendant" />
+          <EntitySet Name="defenses" EntityType="Self.defense" />
+          <EntitySet Name="hearings" EntityType="Self.hearing" />
+          <EntitySet Name="judges" EntityType="Self.judge" />
+          <EntitySet Name="motions" EntityType="Self.motion" />
+          <EntitySet Name="organizedcrimegroups" EntityType="Self.organizedcrimegroup" />
+          <EntitySet Name="prosecutors" EntityType="Self.prosecutor" />
+          <EntitySet Name="sentences" EntityType="Self.sentence" />
+          <EntitySet Name="victims" EntityType="Self.victim" />
+          <AssociationSet Name="fk_ArrestChargeDetails_BailId" Association="Self.fk_ArrestChargeDetails_BailId">
+            <End Role="bail" EntitySet="bails" />
+            <End Role="arrestchargedetails" EntitySet="arrestchargedetails" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Case_ACDId" Association="Self.fk_Case_ACDId">
+            <End Role="arrestchargedetails" EntitySet="arrestchargedetails" />
+            <End Role="casetable" EntitySet="casetables" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Charge_ArrestChargeDetails1" Association="Self.fk_Charge_ArrestChargeDetails1">
+            <End Role="arrestchargedetails" EntitySet="arrestchargedetails" />
+            <End Role="charge" EntitySet="charges" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Case_CourtId" Association="Self.fk_Case_CourtId">
+            <End Role="court" EntitySet="courts" />
+            <End Role="casetable" EntitySet="casetables" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Case_DefenseId" Association="Self.fk_Case_DefenseId">
+            <End Role="defense" EntitySet="defenses" />
+            <End Role="casetable" EntitySet="casetables" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Case_SentenceId" Association="Self.fk_Case_SentenceId">
+            <End Role="sentence" EntitySet="sentences" />
+            <End Role="casetable" EntitySet="casetables" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Case_VictimsId" Association="Self.fk_Case_VictimsId">
+            <End Role="victims" EntitySet="victims" />
+            <End Role="casetable" EntitySet="casetables" />
+          </AssociationSet>
+          <AssociationSet Name="case_has_defendant" Association="Self.case_has_defendant">
+            <End Role="casetable" EntitySet="casetables" />
+            <End Role="defendant" EntitySet="defendants" />
+          </AssociationSet>
+          <AssociationSet Name="case_has_hearing" Association="Self.case_has_hearing">
+            <End Role="casetable" EntitySet="casetables" />
+            <End Role="hearing" EntitySet="hearings" />
+          </AssociationSet>
+          <AssociationSet Name="case_has_judge" Association="Self.case_has_judge">
+            <End Role="casetable" EntitySet="casetables" />
+            <End Role="judge" EntitySet="judges" />
+          </AssociationSet>
+          <AssociationSet Name="case_has_motion" Association="Self.case_has_motion">
+            <End Role="casetable" EntitySet="casetables" />
+            <End Role="motion" EntitySet="motions" />
+          </AssociationSet>
+          <AssociationSet Name="case_has_organizedcrimegroup" Association="Self.case_has_organizedcrimegroup">
+            <End Role="casetable" EntitySet="casetables" />
+            <End Role="organizedcrimegroup" EntitySet="organizedcrimegroups" />
+          </AssociationSet>
+          <AssociationSet Name="case_has_prosecutor" Association="Self.case_has_prosecutor">
+            <End Role="casetable" EntitySet="casetables" />
+            <End Role="prosecutor" EntitySet="prosecutors" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="judgefrogModelStoreContainer" CdmEntityContainer="judgefrogEntities">
+          <EntitySetMapping Name="arrestchargedetails">
+            <EntityTypeMapping TypeName="judgefrogModel.arrestchargedetail">
+              <MappingFragment StoreEntitySet="arrestchargedetails">
+                <ScalarProperty Name="ACDId" ColumnName="ACDId" />
+                <ScalarProperty Name="ChargeDate" ColumnName="ChargeDate" />
+                <ScalarProperty Name="ArrestDate" ColumnName="ArrestDate" />
+                <ScalarProperty Name="BailId" ColumnName="BailId" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="bails">
+            <EntityTypeMapping TypeName="judgefrogModel.bail">
+              <MappingFragment StoreEntitySet="bail">
+                <ScalarProperty Name="BailId" ColumnName="BailId" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Detained" ColumnName="Detained" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="casetables">
+            <EntityTypeMapping TypeName="judgefrogModel.casetable">
+              <MappingFragment StoreEntitySet="casetable">
+                <ScalarProperty Name="CaseId" ColumnName="CaseId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Summary" ColumnName="Summary" />
+                <ScalarProperty Name="GrandJury" ColumnName="GrandJury" />
+                <ScalarProperty Name="CourtId" ColumnName="CourtId" />
+                <ScalarProperty Name="DefenseId" ColumnName="DefenseId" />
+                <ScalarProperty Name="VictimsId" ColumnName="VictimsId" />
+                <ScalarProperty Name="ACDId" ColumnName="ACDId" />
+                <ScalarProperty Name="SentenceId" ColumnName="SentenceId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="charges">
+            <EntityTypeMapping TypeName="judgefrogModel.charge">
+              <MappingFragment StoreEntitySet="charge">
+                <ScalarProperty Name="ChargeId" ColumnName="ChargeId" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="ArrestChargeDetails_Id" ColumnName="ArrestChargeDetails_Id" />
+                <ScalarProperty Name="Counts" ColumnName="Counts" />
+                <ScalarProperty Name="Statute" ColumnName="Statute" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="Plea" ColumnName="Plea" />
+                <ScalarProperty Name="Disposition" ColumnName="Disposition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="courts">
+            <EntityTypeMapping TypeName="judgefrogModel.court">
+              <MappingFragment StoreEntitySet="court">
+                <ScalarProperty Name="CourtId" ColumnName="CourtId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="County" ColumnName="County" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="defendants">
+            <EntityTypeMapping TypeName="judgefrogModel.defendant">
+              <MappingFragment StoreEntitySet="defendant">
+                <ScalarProperty Name="DefendantId" ColumnName="DefendantId" />
+                <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+                <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="Race" ColumnName="Race" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="defenses">
+            <EntityTypeMapping TypeName="judgefrogModel.defense">
+              <MappingFragment StoreEntitySet="defense">
+                <ScalarProperty Name="DefenseId" ColumnName="DefenseId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Career" ColumnName="Career" />
+                <ScalarProperty Name="Counsel" ColumnName="Counsel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="hearings">
+            <EntityTypeMapping TypeName="judgefrogModel.hearing">
+              <MappingFragment StoreEntitySet="hearing">
+                <ScalarProperty Name="HearingId" ColumnName="HearingId" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="judges">
+            <EntityTypeMapping TypeName="judgefrogModel.judge">
+              <MappingFragment StoreEntitySet="judge">
+                <ScalarProperty Name="JudgeId" ColumnName="JudgeId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Race" ColumnName="Race" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Career" ColumnName="Career" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="motions">
+            <EntityTypeMapping TypeName="judgefrogModel.motion">
+              <MappingFragment StoreEntitySet="motion">
+                <ScalarProperty Name="MotionId" ColumnName="MotionId" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="organizedcrimegroups">
+            <EntityTypeMapping TypeName="judgefrogModel.organizedcrimegroup">
+              <MappingFragment StoreEntitySet="organizedcrimegroup">
+                <ScalarProperty Name="OCGId" ColumnName="OCGId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="Scope" ColumnName="Scope" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="prosecutors">
+            <EntityTypeMapping TypeName="judgefrogModel.prosecutor">
+              <MappingFragment StoreEntitySet="prosecutor">
+                <ScalarProperty Name="ProsecutorId" ColumnName="ProsecutorId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Career" ColumnName="Career" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sentences">
+            <EntityTypeMapping TypeName="judgefrogModel.sentence">
+              <MappingFragment StoreEntitySet="sentence">
+                <ScalarProperty Name="SentenceId" ColumnName="SentenceId" />
+                <ScalarProperty Name="DispositionDate" ColumnName="DispositionDate" />
+                <ScalarProperty Name="SentenceDate" ColumnName="SentenceDate" />
+                <ScalarProperty Name="JailTime" ColumnName="JailTime" />
+                <ScalarProperty Name="ProbationTime" ColumnName="ProbationTime" />
+                <ScalarProperty Name="SuspendedTime" ColumnName="SuspendedTime" />
+                <ScalarProperty Name="Fines" ColumnName="Fines" />
+                <ScalarProperty Name="CommServ" ColumnName="CommServ" />
+                <ScalarProperty Name="COR" ColumnName="COR" />
+                <ScalarProperty Name="CCD_Id" ColumnName="CCD_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="victims">
+            <EntityTypeMapping TypeName="judgefrogModel.victim">
+              <MappingFragment StoreEntitySet="victims">
+                <ScalarProperty Name="VictimsId" ColumnName="VictimsId" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="Minor" ColumnName="Minor" />
+                <ScalarProperty Name="Foreigner" ColumnName="Foreigner" />
+                <ScalarProperty Name="Female" ColumnName="Female" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="case_has_defendant" TypeName="judgefrogModel.case_has_defendant" StoreEntitySet="case_has_defendant">
+            <EndProperty Name="casetable">
+              <ScalarProperty Name="CaseId" ColumnName="Case_CaseId" />
+            </EndProperty>
+            <EndProperty Name="defendant">
+              <ScalarProperty Name="DefendantId" ColumnName="Defendant_DefendantId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="case_has_hearing" TypeName="judgefrogModel.case_has_hearing" StoreEntitySet="case_has_hearing">
+            <EndProperty Name="casetable">
+              <ScalarProperty Name="CaseId" ColumnName="Case_CaseId" />
+            </EndProperty>
+            <EndProperty Name="hearing">
+              <ScalarProperty Name="HearingId" ColumnName="Hearing_HearingId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="case_has_judge" TypeName="judgefrogModel.case_has_judge" StoreEntitySet="case_has_judge">
+            <EndProperty Name="casetable">
+              <ScalarProperty Name="CaseId" ColumnName="Case_CaseId" />
+            </EndProperty>
+            <EndProperty Name="judge">
+              <ScalarProperty Name="JudgeId" ColumnName="Judge_JudgeId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="case_has_motion" TypeName="judgefrogModel.case_has_motion" StoreEntitySet="case_has_motion">
+            <EndProperty Name="casetable">
+              <ScalarProperty Name="CaseId" ColumnName="Case_CaseId" />
+            </EndProperty>
+            <EndProperty Name="motion">
+              <ScalarProperty Name="MotionId" ColumnName="Motion_MotionId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="case_has_organizedcrimegroup" TypeName="judgefrogModel.case_has_organizedcrimegroup" StoreEntitySet="case_has_organizedcrimegroup">
+            <EndProperty Name="casetable">
+              <ScalarProperty Name="CaseId" ColumnName="Case_CaseId" />
+            </EndProperty>
+            <EndProperty Name="organizedcrimegroup">
+              <ScalarProperty Name="OCGId" ColumnName="OrganizedCrimeGroup_OCGId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="case_has_prosecutor" TypeName="judgefrogModel.case_has_prosecutor" StoreEntitySet="case_has_prosecutor">
+            <EndProperty Name="casetable">
+              <ScalarProperty Name="CaseId" ColumnName="Case_CaseId" />
+            </EndProperty>
+            <EndProperty Name="prosecutor">
+              <ScalarProperty Name="ProsecutorId" ColumnName="Prosecutor_ProsecutorId" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
