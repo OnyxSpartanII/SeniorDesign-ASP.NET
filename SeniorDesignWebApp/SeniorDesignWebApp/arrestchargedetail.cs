@@ -19,6 +19,18 @@ namespace SeniorDesignWebApp
             this.casetables = new HashSet<casetable>();
             this.charges = new HashSet<charge>();
         }
+
+        public arrestchargedetail(long acdid, System.DateTime cdate, System.DateTime adate, long bid, bool r)
+        {
+            this.ACDId = acdid;
+            this.ChargeDate = cdate;
+            this.ArrestDate = adate;
+            this.BailId = bid;
+            this.Role = r;
+
+            this.casetables = new HashSet<casetable>();
+            this.charges = new HashSet<charge>();
+        }
     
         public long ACDId { get; set; }
         public System.DateTime ChargeDate { get; set; }

@@ -18,6 +18,15 @@ namespace SeniorDesignWebApp
         {
             this.casetables = new HashSet<casetable>();
         }
+
+        public hearing(long hid, int t, System.DateTime d)
+        {
+            this.HearingId = hid;
+            this.Type = t;
+            this.Date = d;
+
+            this.casetables = new HashSet<casetable>();
+        }
     
         public long HearingId { get; set; }
         public int Type { get; set; }

@@ -14,6 +14,18 @@ namespace SeniorDesignWebApp
     
     public partial class charge
     {
+        public charge(long cid, int t, long acdid, long count, string stat, string det, int p, int d)
+        {
+            this.ChargeId = cid;
+            this.Type = t;
+            this.ArrestChargeDetails_Id = acdid;
+            this.Counts = count;
+            this.Statute = stat;
+            this.Details = det;
+            this.Plea = p;
+            this.Disposition = d;
+        }
+
         public long ChargeId { get; set; }
         public int Type { get; set; }
         public long ArrestChargeDetails_Id { get; set; }

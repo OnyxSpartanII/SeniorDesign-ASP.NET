@@ -11,11 +11,22 @@ namespace SeniorDesignWebApp
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class judge
     {
         public judge()
         {
+            this.casetables = new HashSet<casetable>();
+        }
+
+        public judge(long jid, string n, int r, bool g, int c)
+        {
+            this.JudgeId = jid;
+            this.Name = n;
+            this.Race = r;
+            this.Gender = g;
+            this.Career = c;
+
             this.casetables = new HashSet<casetable>();
         }
     

@@ -18,6 +18,15 @@ namespace SeniorDesignWebApp
         {
             this.casetables = new HashSet<casetable>();
         }
+
+        public motion(long mid, int t, System.DateTime d)
+        {
+            this.MotionId = mid;
+            this.Type = t;
+            this.Date = d;
+
+            this.casetables = new HashSet<casetable>();
+        }
     
         public long MotionId { get; set; }
         public int Type { get; set; }

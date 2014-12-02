@@ -18,6 +18,22 @@ namespace SeniorDesignWebApp
         {
             this.casetables = new HashSet<casetable>();
         }
+
+        public sentence(long sid, System.DateTime ddate, System.DateTime sdate, int jt, int pt, int st, double f, int cs, bool cor, bool cc)
+        {
+            this.SentenceId = sid;
+            this.DispositionDate = ddate;
+            this.SentenceDate = sdate;
+            this.JailTime = jt;
+            this.ProbationTime = pt;
+            this.SuspendedTime = st;
+            this.Fines = f;
+            this.CommServ = cs;
+            this.COR = cor;
+            this.CCD_Id = cc;
+
+            this.casetables = new HashSet<casetable>();
+        }
     
         public long SentenceId { get; set; }
         public System.DateTime DispositionDate { get; set; }

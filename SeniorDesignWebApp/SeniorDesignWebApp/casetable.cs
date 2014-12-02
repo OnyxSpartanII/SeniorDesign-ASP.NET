@@ -23,6 +23,28 @@ namespace SeniorDesignWebApp
             this.organizedcrimegroups = new HashSet<organizedcrimegroup>();
             this.prosecutors = new HashSet<prosecutor>();
         }
+
+        public casetable(long cid, string nam, string num, bool stat, string summ, bool gj, long courtid, long defid, long vid, long acdid, long sentid)
+        {
+            this.CaseId = cid;
+            this.Name = nam;
+            this.Number = num;
+            this.Status = stat;
+            this.Summary = summ;
+            this.GrandJury = gj;
+            this.CourtId = courtid;
+            this.DefenseId = defid;
+            this.VictimsId = vid;
+            this.ACDId = acdid;
+            this.SentenceId = sentid;
+
+            this.defendants = new HashSet<defendant>();
+            this.hearings = new HashSet<hearing>();
+            this.judges = new HashSet<judge>();
+            this.motions = new HashSet<motion>();
+            this.organizedcrimegroups = new HashSet<organizedcrimegroup>();
+            this.prosecutors = new HashSet<prosecutor>();
+        }
     
         public long CaseId { get; set; }
         public string Name { get; set; }
