@@ -236,6 +236,7 @@
     <Compile Include="Controllers\OrganizedCrimeGroupController.cs" />
     <Compile Include="Controllers\ProsecutorController.cs" />
     <Compile Include="Controllers\SentenceController.cs" />
+    <Compile Include="Controllers\SiteIndexController.cs" />
     <Compile Include="Controllers\UploadController.cs" />
     <Compile Include="Controllers\VictimController.cs" />
     <Compile Include="court.cs">
@@ -480,6 +481,8 @@
     <Content Include="Views\Victim\Index.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Upload\Index.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\SiteIndex\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
