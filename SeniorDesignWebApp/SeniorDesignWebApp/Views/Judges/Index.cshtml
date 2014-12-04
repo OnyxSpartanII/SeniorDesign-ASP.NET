@@ -27,7 +27,10 @@
                 @Html.DisplayNameFor(model => model.Gender)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Career)
+                @Html.DisplayNameFor(model => model.Tenure)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AppointedBy)
             </th>
             <th></th>
         </tr>
@@ -44,7 +47,10 @@
                 @Html.DisplayFor(modelItem => item.Gender)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Career)
+                @Html.DisplayFor(modelItem => item.Tenure)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AppointedBy)
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id=item.JudgeId }) |

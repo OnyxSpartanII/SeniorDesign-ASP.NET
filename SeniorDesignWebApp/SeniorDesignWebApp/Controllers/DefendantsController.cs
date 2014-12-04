@@ -46,7 +46,7 @@ namespace SeniorDesignWebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "DefendantId,Firstname,Lastname,Gender,Age,Race")] defendant defendant)
+        public ActionResult Create([Bind(Include = "DefendantId,Firstname,Lastname,Gender,BirthDate,Race")] defendant defendant)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace SeniorDesignWebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "DefendantId,Firstname,Lastname,Gender,Age,Race")] defendant defendant)
+        public ActionResult Edit([Bind(Include = "DefendantId,Firstname,Lastname,Gender,BirthDate,Race")] defendant defendant)
         {
             if (ModelState.IsValid)
             {

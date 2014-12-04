@@ -21,10 +21,10 @@
                 @Html.DisplayNameFor(model => model.Type)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Detained)
+                @Html.DisplayNameFor(model => model.Amount)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Amount)
+                @Html.DisplayNameFor(model => model.arrestchargedetail.ACDId)
             </th>
             <th></th>
         </tr>
@@ -35,10 +35,10 @@
                 @Html.DisplayFor(modelItem => item.Type)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Detained)
+                @Html.DisplayFor(modelItem => item.Amount)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Amount)
+                @Html.DisplayFor(modelItem => item.arrestchargedetail.ACDId)
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id=item.BailId }) |

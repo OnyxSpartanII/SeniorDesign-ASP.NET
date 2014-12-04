@@ -10,18 +10,17 @@ using SeniorDesignWebApp;
 
 namespace SeniorDesignWebApp.Controllers
 {
-    public class arrestchargedetailsController : Controller
+    public class ArrestChargeDetailsController : Controller
     {
         private judgefrogEntities db = new judgefrogEntities();
 
-        // GET: arrestchargedetails
+        // GET: ArrestChargeDetails
         public ActionResult Index()
         {
-            var arrestchargedetails = db.arrestchargedetails.Include(a => a.bail);
-            return View(arrestchargedetails.ToList());
+            return View(db.arrestchargedetails.ToList());
         }
 
-        // GET: arrestchargedetails/Details/5
+        // GET: ArrestChargeDetails/Details/5
         public ActionResult Details(long? id)
         {
             if (id == null)
@@ -36,19 +35,18 @@ namespace SeniorDesignWebApp.Controllers
             return View(arrestchargedetail);
         }
 
-        // GET: arrestchargedetails/Create
+        // GET: ArrestChargeDetails/Create
         public ActionResult Create()
         {
-            ViewBag.BailId = new SelectList(db.bails, "BailId", "BailId");
             return View();
         }
 
-        // POST: arrestchargedetails/Create
+        // POST: ArrestChargeDetails/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ACDId,ChargeDate,ArrestDate,BailId,Role")] arrestchargedetail arrestchargedetail)
+        public ActionResult Create([Bind(Include = "ACDId,ChargeDate,ArrestDate,Detained,Role,LaborTraf,AdultSexTraf,MinorSexTraf,Fel_C,Fel_S")] arrestchargedetail arrestchargedetail)
         {
             if (ModelState.IsValid)
             {
@@ -57,11 +55,10 @@ namespace SeniorDesignWebApp.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.BailId = new SelectList(db.bails, "BailId", "BailId", arrestchargedetail.BailId);
             return View(arrestchargedetail);
         }
 
-        // GET: arrestchargedetails/Edit/5
+        // GET: ArrestChargeDetails/Edit/5
         public ActionResult Edit(long? id)
         {
             if (id == null)
@@ -73,16 +70,15 @@ namespace SeniorDesignWebApp.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.BailId = new SelectList(db.bails, "BailId", "BailId", arrestchargedetail.BailId);
             return View(arrestchargedetail);
         }
 
-        // POST: arrestchargedetails/Edit/5
+        // POST: ArrestChargeDetails/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ACDId,ChargeDate,ArrestDate,BailId,Role")] arrestchargedetail arrestchargedetail)
+        public ActionResult Edit([Bind(Include = "ACDId,ChargeDate,ArrestDate,Detained,Role,LaborTraf,AdultSexTraf,MinorSexTraf,Fel_C,Fel_S")] arrestchargedetail arrestchargedetail)
         {
             if (ModelState.IsValid)
             {
@@ -90,11 +86,10 @@ namespace SeniorDesignWebApp.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.BailId = new SelectList(db.bails, "BailId", "BailId", arrestchargedetail.BailId);
             return View(arrestchargedetail);
         }
 
-        // GET: arrestchargedetails/Delete/5
+        // GET: ArrestChargeDetails/Delete/5
         public ActionResult Delete(long? id)
         {
             if (id == null)
@@ -109,7 +104,7 @@ namespace SeniorDesignWebApp.Controllers
             return View(arrestchargedetail);
         }
 
-        // POST: arrestchargedetails/Delete/5
+        // POST: ArrestChargeDetails/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(long id)

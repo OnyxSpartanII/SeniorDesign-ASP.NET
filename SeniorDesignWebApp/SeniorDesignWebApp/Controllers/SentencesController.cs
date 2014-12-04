@@ -46,7 +46,7 @@ namespace SeniorDesignWebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "SentenceId,DispositionDate,SentenceDate,JailTime,ProbationTime,SuspendedTime,Fines,CommServ,COR,CCD_Id")] sentence sentence)
+        public ActionResult Create([Bind(Include = "SentenceId,DateTerminated,Date,Total,Restitution,AssetForfeit,Appeal,SupervisedRelease,Probation")] sentence sentence)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace SeniorDesignWebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "SentenceId,DispositionDate,SentenceDate,JailTime,ProbationTime,SuspendedTime,Fines,CommServ,COR,CCD_Id")] sentence sentence)
+        public ActionResult Edit([Bind(Include = "SentenceId,DateTerminated,Date,Total,Restitution,AssetForfeit,Appeal,SupervisedRelease,Probation")] sentence sentence)
         {
             if (ModelState.IsValid)
             {
