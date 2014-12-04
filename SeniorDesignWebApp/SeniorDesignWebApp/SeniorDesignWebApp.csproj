@@ -100,6 +100,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.Owin.Security.Twitter.2.1.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="MsieJavaScriptEngine">
       <HintPath>..\packages\MsieJavaScriptEngine.1.4.0\lib\net40\MsieJavaScriptEngine.dll</HintPath>
     </Reference>
