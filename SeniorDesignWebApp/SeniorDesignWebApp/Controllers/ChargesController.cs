@@ -10,112 +10,112 @@ using SeniorDesignWebApp;
 
 namespace SeniorDesignWebApp.Controllers
 {
-    public class arrestchargedetailsController : Controller
+    public class ChargesController : Controller
     {
         private judgefrogEntities db = new judgefrogEntities();
 
-        // GET: arrestchargedetails
+        // GET: Charges
         public ActionResult Index()
         {
-            var arrestchargedetails = db.arrestchargedetails.Include(a => a.bail);
-            return View(arrestchargedetails.ToList());
+            var charges = db.charges.Include(c => c.arrestchargedetail);
+            return View(charges.ToList());
         }
 
-        // GET: arrestchargedetails/Details/5
+        // GET: Charges/Details/5
         public ActionResult Details(long? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            arrestchargedetail arrestchargedetail = db.arrestchargedetails.Find(id);
-            if (arrestchargedetail == null)
+            charge charge = db.charges.Find(id);
+            if (charge == null)
             {
                 return HttpNotFound();
             }
-            return View(arrestchargedetail);
+            return View(charge);
         }
 
-        // GET: arrestchargedetails/Create
+        // GET: Charges/Create
         public ActionResult Create()
         {
-            ViewBag.BailId = new SelectList(db.bails, "BailId", "BailId");
+            ViewBag.ArrestChargeDetails_Id = new SelectList(db.arrestchargedetails, "ACDId", "ACDId");
             return View();
         }
 
-        // POST: arrestchargedetails/Create
+        // POST: Charges/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ACDId,ChargeDate,ArrestDate,BailId,Role")] arrestchargedetail arrestchargedetail)
+        public ActionResult Create([Bind(Include = "ChargeId,Type,ArrestChargeDetails_Id,Counts,Statute,Details,Plea,Disposition")] charge charge)
         {
             if (ModelState.IsValid)
             {
-                db.arrestchargedetails.Add(arrestchargedetail);
+                db.charges.Add(charge);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.BailId = new SelectList(db.bails, "BailId", "BailId", arrestchargedetail.BailId);
-            return View(arrestchargedetail);
+            ViewBag.ArrestChargeDetails_Id = new SelectList(db.arrestchargedetails, "ACDId", "ACDId", charge.ArrestChargeDetails_Id);
+            return View(charge);
         }
 
-        // GET: arrestchargedetails/Edit/5
+        // GET: Charges/Edit/5
         public ActionResult Edit(long? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            arrestchargedetail arrestchargedetail = db.arrestchargedetails.Find(id);
-            if (arrestchargedetail == null)
+            charge charge = db.charges.Find(id);
+            if (charge == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.BailId = new SelectList(db.bails, "BailId", "BailId", arrestchargedetail.BailId);
-            return View(arrestchargedetail);
+            ViewBag.ArrestChargeDetails_Id = new SelectList(db.arrestchargedetails, "ACDId", "ACDId", charge.ArrestChargeDetails_Id);
+            return View(charge);
         }
 
-        // POST: arrestchargedetails/Edit/5
+        // POST: Charges/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ACDId,ChargeDate,ArrestDate,BailId,Role")] arrestchargedetail arrestchargedetail)
+        public ActionResult Edit([Bind(Include = "ChargeId,Type,ArrestChargeDetails_Id,Counts,Statute,Details,Plea,Disposition")] charge charge)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(arrestchargedetail).State = EntityState.Modified;
+                db.Entry(charge).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.BailId = new SelectList(db.bails, "BailId", "BailId", arrestchargedetail.BailId);
-            return View(arrestchargedetail);
+            ViewBag.ArrestChargeDetails_Id = new SelectList(db.arrestchargedetails, "ACDId", "ACDId", charge.ArrestChargeDetails_Id);
+            return View(charge);
         }
 
-        // GET: arrestchargedetails/Delete/5
+        // GET: Charges/Delete/5
         public ActionResult Delete(long? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            arrestchargedetail arrestchargedetail = db.arrestchargedetails.Find(id);
-            if (arrestchargedetail == null)
+            charge charge = db.charges.Find(id);
+            if (charge == null)
             {
                 return HttpNotFound();
             }
-            return View(arrestchargedetail);
+            return View(charge);
         }
 
-        // POST: arrestchargedetails/Delete/5
+        // POST: Charges/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(long id)
         {
-            arrestchargedetail arrestchargedetail = db.arrestchargedetails.Find(id);
-            db.arrestchargedetails.Remove(arrestchargedetail);
+            charge charge = db.charges.Find(id);
+            db.charges.Remove(charge);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

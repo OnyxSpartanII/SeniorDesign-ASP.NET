@@ -1,0 +1,98 @@
+﻿@model SeniorDesignWebApp.sentence
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>sentence</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.DispositionDate)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.DispositionDate)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.SentenceDate)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.SentenceDate)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.JailTime)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.JailTime)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ProbationTime)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ProbationTime)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.SuspendedTime)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.SuspendedTime)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Fines)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Fines)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.CommServ)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.CommServ)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.COR)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.COR)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.CCD_Id)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.CCD_Id)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.SentenceId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

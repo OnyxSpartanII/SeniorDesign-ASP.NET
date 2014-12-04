@@ -1,0 +1,106 @@
+﻿@model SeniorDesignWebApp.casetable
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>casetable</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Number)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Number)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Status)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Status)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Summary)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Summary)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.GrandJury)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.GrandJury)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.arrestchargedetail.ACDId)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.arrestchargedetail.ACDId)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.court.Name)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.court.Name)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.defense.Name)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.defense.Name)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.sentence.SentenceId)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.sentence.SentenceId)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.victim.VictimsId)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.victim.VictimsId)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.CaseId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

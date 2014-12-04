@@ -1,4 +1,4 @@
-﻿@model SeniorDesignWebApp.Models.ArrestChargeDetailsModel
+﻿@model SeniorDesignWebApp.arrestchargedetail
 
 @{
     Layout = null;
@@ -12,19 +12,15 @@
     <title>Edit</title>
 </head>
 <body>
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/jqueryval")
-    
-    
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
         
         <div class="form-horizontal">
-            <h4>ArrestChargeDetailsModel</h4>
+            <h4>arrestchargedetail</h4>
             <hr />
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            @Html.HiddenFor(model => model.ID)
+            @Html.HiddenFor(model => model.ACDId)
     
             <div class="form-group">
                 @Html.LabelFor(model => model.ChargeDate, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -43,72 +39,20 @@
             </div>
     
             <div class="form-group">
+                @Html.LabelFor(model => model.BailId, "BailId", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("BailId", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.BailId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
                 @Html.LabelFor(model => model.Role, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.Role, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Role, "", new { @class = "text-danger" })
-                </div>
-            </div>
-    
-            <div class="form-group">
-                @Html.LabelFor(model => model.LaborTrafficking, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
                     <div class="checkbox">
-                        @Html.EditorFor(model => model.LaborTrafficking)
-                        @Html.ValidationMessageFor(model => model.LaborTrafficking, "", new { @class = "text-danger" })
+                        @Html.EditorFor(model => model.Role)
+                        @Html.ValidationMessageFor(model => model.Role, "", new { @class = "text-danger" })
                     </div>
-                </div>
-            </div>
-    
-            <div class="form-group">
-                @Html.LabelFor(model => model.MinorSexTrafficking, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    <div class="checkbox">
-                        @Html.EditorFor(model => model.MinorSexTrafficking)
-                        @Html.ValidationMessageFor(model => model.MinorSexTrafficking, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-            </div>
-    
-            <div class="form-group">
-                @Html.LabelFor(model => model.AdultSexTrafficking, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    <div class="checkbox">
-                        @Html.EditorFor(model => model.AdultSexTrafficking)
-                        @Html.ValidationMessageFor(model => model.AdultSexTrafficking, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-            </div>
-    
-            <div class="form-group">
-                @Html.LabelFor(model => model.FelonyCounts, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.FelonyCounts, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.FelonyCounts, "", new { @class = "text-danger" })
-                </div>
-            </div>
-    
-            <div class="form-group">
-                @Html.LabelFor(model => model.MisdemeanorCounts, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.MisdemeanorCounts, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.MisdemeanorCounts, "", new { @class = "text-danger" })
-                </div>
-            </div>
-    
-            <div class="form-group">
-                @Html.LabelFor(model => model.FelonySentences, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.FelonySentences, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.FelonySentences, "", new { @class = "text-danger" })
-                </div>
-            </div>
-    
-            <div class="form-group">
-                @Html.LabelFor(model => model.MisdemeanorSentences, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.MisdemeanorSentences, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.MisdemeanorSentences, "", new { @class = "text-danger" })
                 </div>
             </div>
     

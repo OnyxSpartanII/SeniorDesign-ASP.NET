@@ -225,6 +225,7 @@
     </Compile>
     <Compile Include="Controllers\ArrestChargeDetailsController.cs" />
     <Compile Include="Controllers\BailController.cs" />
+    <Compile Include="Controllers\bailsController.cs" />
     <Compile Include="Controllers\CaseController.cs" />
     <Compile Include="Controllers\ChargeController.cs" />
     <Compile Include="Controllers\CourtController.cs" />
@@ -481,6 +482,11 @@
     <Content Include="Views\Victim\Index.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Upload\Index.cshtml" />
+    <Content Include="Views\bails\Create.cshtml" />
+    <Content Include="Views\bails\Delete.cshtml" />
+    <Content Include="Views\bails\Details.cshtml" />
+    <Content Include="Views\bails\Edit.cshtml" />
+    <Content Include="Views\bails\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

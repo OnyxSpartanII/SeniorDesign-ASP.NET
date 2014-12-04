@@ -10,112 +10,107 @@ using SeniorDesignWebApp;
 
 namespace SeniorDesignWebApp.Controllers
 {
-    public class arrestchargedetailsController : Controller
+    public class MotionsController : Controller
     {
         private judgefrogEntities db = new judgefrogEntities();
 
-        // GET: arrestchargedetails
+        // GET: Motions
         public ActionResult Index()
         {
-            var arrestchargedetails = db.arrestchargedetails.Include(a => a.bail);
-            return View(arrestchargedetails.ToList());
+            return View(db.motions.ToList());
         }
 
-        // GET: arrestchargedetails/Details/5
+        // GET: Motions/Details/5
         public ActionResult Details(long? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            arrestchargedetail arrestchargedetail = db.arrestchargedetails.Find(id);
-            if (arrestchargedetail == null)
+            motion motion = db.motions.Find(id);
+            if (motion == null)
             {
                 return HttpNotFound();
             }
-            return View(arrestchargedetail);
+            return View(motion);
         }
 
-        // GET: arrestchargedetails/Create
+        // GET: Motions/Create
         public ActionResult Create()
         {
-            ViewBag.BailId = new SelectList(db.bails, "BailId", "BailId");
             return View();
         }
 
-        // POST: arrestchargedetails/Create
+        // POST: Motions/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ACDId,ChargeDate,ArrestDate,BailId,Role")] arrestchargedetail arrestchargedetail)
+        public ActionResult Create([Bind(Include = "MotionId,Type,Date")] motion motion)
         {
             if (ModelState.IsValid)
             {
-                db.arrestchargedetails.Add(arrestchargedetail);
+                db.motions.Add(motion);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.BailId = new SelectList(db.bails, "BailId", "BailId", arrestchargedetail.BailId);
-            return View(arrestchargedetail);
+            return View(motion);
         }
 
-        // GET: arrestchargedetails/Edit/5
+        // GET: Motions/Edit/5
         public ActionResult Edit(long? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            arrestchargedetail arrestchargedetail = db.arrestchargedetails.Find(id);
-            if (arrestchargedetail == null)
+            motion motion = db.motions.Find(id);
+            if (motion == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.BailId = new SelectList(db.bails, "BailId", "BailId", arrestchargedetail.BailId);
-            return View(arrestchargedetail);
+            return View(motion);
         }
 
-        // POST: arrestchargedetails/Edit/5
+        // POST: Motions/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ACDId,ChargeDate,ArrestDate,BailId,Role")] arrestchargedetail arrestchargedetail)
+        public ActionResult Edit([Bind(Include = "MotionId,Type,Date")] motion motion)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(arrestchargedetail).State = EntityState.Modified;
+                db.Entry(motion).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.BailId = new SelectList(db.bails, "BailId", "BailId", arrestchargedetail.BailId);
-            return View(arrestchargedetail);
+            return View(motion);
         }
 
-        // GET: arrestchargedetails/Delete/5
+        // GET: Motions/Delete/5
         public ActionResult Delete(long? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            arrestchargedetail arrestchargedetail = db.arrestchargedetails.Find(id);
-            if (arrestchargedetail == null)
+            motion motion = db.motions.Find(id);
+            if (motion == null)
             {
                 return HttpNotFound();
             }
-            return View(arrestchargedetail);
+            return View(motion);
         }
 
-        // POST: arrestchargedetails/Delete/5
+        // POST: Motions/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(long id)
         {
-            arrestchargedetail arrestchargedetail = db.arrestchargedetails.Find(id);
-            db.arrestchargedetails.Remove(arrestchargedetail);
+            motion motion = db.motions.Find(id);
+            db.motions.Remove(motion);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

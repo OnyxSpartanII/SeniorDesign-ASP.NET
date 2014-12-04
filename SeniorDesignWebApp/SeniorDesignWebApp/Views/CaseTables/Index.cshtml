@@ -1,0 +1,95 @@
+﻿@model IEnumerable<SeniorDesignWebApp.casetable>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Summary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GrandJury)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.arrestchargedetail.ACDId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.court.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.defense.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sentence.SentenceId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.victim.VictimsId)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Number)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Summary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GrandJury)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.arrestchargedetail.ACDId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.court.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.defense.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sentence.SentenceId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.victim.VictimsId)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.CaseId }) |
+                @Html.ActionLink("Details", "Details", new { id=item.CaseId }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.CaseId })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

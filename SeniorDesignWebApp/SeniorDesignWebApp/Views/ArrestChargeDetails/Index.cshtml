@@ -1,4 +1,4 @@
-﻿@model IEnumerable<SeniorDesignWebApp.Models.ArrestChargeDetailsModel>
+﻿@model IEnumerable<SeniorDesignWebApp.arrestchargedetail>
 
 @{
     Layout = null;
@@ -27,25 +27,7 @@
                 @Html.DisplayNameFor(model => model.Role)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.LaborTrafficking)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MinorSexTrafficking)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AdultSexTrafficking)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FelonyCounts)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MisdemeanorCounts)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FelonySentences)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MisdemeanorSentences)
+                @Html.DisplayNameFor(model => model.bail.BailId)
             </th>
             <th></th>
         </tr>
@@ -62,30 +44,12 @@
                 @Html.DisplayFor(modelItem => item.Role)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.LaborTrafficking)
+                @Html.DisplayFor(modelItem => item.bail.BailId)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.MinorSexTrafficking)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AdultSexTrafficking)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FelonyCounts)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MisdemeanorCounts)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FelonySentences)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MisdemeanorSentences)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-                @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+                @Html.ActionLink("Edit", "Edit", new { id=item.ACDId }) |
+                @Html.ActionLink("Details", "Details", new { id=item.ACDId }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.ACDId })
             </td>
         </tr>
     }

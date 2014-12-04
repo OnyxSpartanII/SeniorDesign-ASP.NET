@@ -1,0 +1,66 @@
+﻿@model SeniorDesignWebApp.defendant
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>defendant</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Firstname)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Firstname)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Lastname)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Lastname)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Gender)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Gender)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Age)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Age)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Race)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Race)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.DefendantId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>
