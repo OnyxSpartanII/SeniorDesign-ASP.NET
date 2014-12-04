@@ -1,0 +1,89 @@
+﻿@model IEnumerable<SeniorDesignWebApp.sentence>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DispositionDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SentenceDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JailTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProbationTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SuspendedTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fines)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CommServ)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.COR)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CCD_Id)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DispositionDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SentenceDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JailTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProbationTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SuspendedTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fines)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CommServ)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.COR)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CCD_Id)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.SentenceId }) |
+                @Html.ActionLink("Details", "Details", new { id=item.SentenceId }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.SentenceId })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

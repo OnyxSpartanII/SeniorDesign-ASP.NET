@@ -23,7 +23,8 @@ namespace SeniorDesignWebApp
         public string Name { get; set; }
         public int Race { get; set; }
         public bool Gender { get; set; }
-        public int Career { get; set; }
+        public int Tenure { get; set; }
+        public int AppointedBy { get; set; }
     
         public virtual ICollection<casetable> casetables { get; set; }
     }

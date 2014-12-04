@@ -23,6 +23,7 @@ namespace SeniorDesignWebApp
         public string Name { get; set; }
         public int Size { get; set; }
         public int Scope { get; set; }
+        public int Race { get; set; }
     
         public virtual ICollection<casetable> casetables { get; set; }
     }

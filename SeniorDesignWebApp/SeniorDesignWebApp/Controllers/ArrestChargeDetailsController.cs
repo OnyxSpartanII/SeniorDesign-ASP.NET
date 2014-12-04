@@ -6,111 +6,116 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using SeniorDesignWebApp.Models;
+using SeniorDesignWebApp;
 
 namespace SeniorDesignWebApp.Controllers
 {
-    public class ArrestChargeDetailsController : Controller
+    public class arrestchargedetailsController : Controller
     {
-        private ACDDbContext db = new ACDDbContext();
+        private judgefrogEntities db = new judgefrogEntities();
 
-        // GET: ArrestChargeDetails
+        // GET: arrestchargedetails
         public ActionResult Index()
         {
-            return View(db.ACDs.ToList());
+            var arrestchargedetails = db.arrestchargedetails.Include(a => a.bail);
+            return View(arrestchargedetails.ToList());
         }
 
-        // GET: ArrestChargeDetails/Details/5
-        public ActionResult Details(int? id)
+        // GET: arrestchargedetails/Details/5
+        public ActionResult Details(long? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ArrestChargeDetailsModel arrestChargeDetailsModel = db.ACDs.Find(id);
-            if (arrestChargeDetailsModel == null)
+            arrestchargedetail arrestchargedetail = db.arrestchargedetails.Find(id);
+            if (arrestchargedetail == null)
             {
                 return HttpNotFound();
             }
-            return View(arrestChargeDetailsModel);
+            return View(arrestchargedetail);
         }
 
-        // GET: ArrestChargeDetails/Create
+        // GET: arrestchargedetails/Create
         public ActionResult Create()
         {
+            ViewBag.BailId = new SelectList(db.bails, "BailId", "BailId");
             return View();
         }
 
-        // POST: ArrestChargeDetails/Create
+        // POST: arrestchargedetails/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,ChargeDate,ArrestDate,Role,LaborTrafficking,MinorSexTrafficking,AdultSexTrafficking,FelonyCounts,MisdemeanorCounts,FelonySentences,MisdemeanorSentences")] ArrestChargeDetailsModel arrestChargeDetailsModel)
+        public ActionResult Create([Bind(Include = "ACDId,ChargeDate,ArrestDate,BailId,Role")] arrestchargedetail arrestchargedetail)
         {
             if (ModelState.IsValid)
             {
-                db.ACDs.Add(arrestChargeDetailsModel);
+                db.arrestchargedetails.Add(arrestchargedetail);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(arrestChargeDetailsModel);
+            ViewBag.BailId = new SelectList(db.bails, "BailId", "BailId", arrestchargedetail.BailId);
+            return View(arrestchargedetail);
         }
 
-        // GET: ArrestChargeDetails/Edit/5
-        public ActionResult Edit(int? id)
+        // GET: arrestchargedetails/Edit/5
+        public ActionResult Edit(long? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ArrestChargeDetailsModel arrestChargeDetailsModel = db.ACDs.Find(id);
-            if (arrestChargeDetailsModel == null)
+            arrestchargedetail arrestchargedetail = db.arrestchargedetails.Find(id);
+            if (arrestchargedetail == null)
             {
                 return HttpNotFound();
             }
-            return View(arrestChargeDetailsModel);
+            ViewBag.BailId = new SelectList(db.bails, "BailId", "BailId", arrestchargedetail.BailId);
+            return View(arrestchargedetail);
         }
 
-        // POST: ArrestChargeDetails/Edit/5
+        // POST: arrestchargedetails/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,ChargeDate,ArrestDate,Role,LaborTrafficking,MinorSexTrafficking,AdultSexTrafficking,FelonyCounts,MisdemeanorCounts,FelonySentences,MisdemeanorSentences")] ArrestChargeDetailsModel arrestChargeDetailsModel)
+        public ActionResult Edit([Bind(Include = "ACDId,ChargeDate,ArrestDate,BailId,Role")] arrestchargedetail arrestchargedetail)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(arrestChargeDetailsModel).State = EntityState.Modified;
+                db.Entry(arrestchargedetail).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(arrestChargeDetailsModel);
+            ViewBag.BailId = new SelectList(db.bails, "BailId", "BailId", arrestchargedetail.BailId);
+            return View(arrestchargedetail);
         }
 
-        // GET: ArrestChargeDetails/Delete/5
-        public ActionResult Delete(int? id)
+        // GET: arrestchargedetails/Delete/5
+        public ActionResult Delete(long? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ArrestChargeDetailsModel arrestChargeDetailsModel = db.ACDs.Find(id);
-            if (arrestChargeDetailsModel == null)
+            arrestchargedetail arrestchargedetail = db.arrestchargedetails.Find(id);
+            if (arrestchargedetail == null)
             {
                 return HttpNotFound();
             }
-            return View(arrestChargeDetailsModel);
+            return View(arrestchargedetail);
         }
 
-        // POST: ArrestChargeDetails/Delete/5
+        // POST: arrestchargedetails/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(long id)
         {
-            ArrestChargeDetailsModel arrestChargeDetailsModel = db.ACDs.Find(id);
-            db.ACDs.Remove(arrestChargeDetailsModel);
+            arrestchargedetail arrestchargedetail = db.arrestchargedetails.Find(id);
+            db.arrestchargedetails.Remove(arrestchargedetail);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

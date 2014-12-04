@@ -1,0 +1,58 @@
+﻿@model SeniorDesignWebApp.victim
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>victim</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Total)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Total)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Minor)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Minor)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Foreigner)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Foreigner)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Female)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Female)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.VictimsId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>
