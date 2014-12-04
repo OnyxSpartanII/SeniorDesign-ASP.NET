@@ -258,6 +258,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>JudgeFrogDb.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\AdminPanelModel.cs" />
     <Compile Include="Models\upload.cs" />
     <Compile Include="organizedcrimegroup.cs">
       <DependentUpon>JudgeFrogDb.tt</DependentUpon>
@@ -360,6 +361,12 @@
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Views\AdminPanel\court.html" />
+    <Content Include="Views\AdminPanel\css\style.css" />
+    <Content Include="Views\AdminPanel\defendant.html" />
+    <Content Include="Views\AdminPanel\img\background.png" />
+    <Content Include="Views\AdminPanel\index.html" />
+    <Content Include="Views\AdminPanel\upload.html" />
     <Content Include="Views\ArrestChargeDetails\Create.cshtml" />
     <Content Include="Views\ArrestChargeDetails\Delete.cshtml" />
     <Content Include="Views\ArrestChargeDetails\Details.cshtml" />
@@ -418,10 +425,11 @@
     <Content Include="Views\Victims\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\SiteIndex\Index.cshtml" />
+    <Content Include="Views\AdminPanel\.DS_Store" />
+    <Content Include="Views\AdminPanel\img\.DS_Store" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\AdminPanel\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
