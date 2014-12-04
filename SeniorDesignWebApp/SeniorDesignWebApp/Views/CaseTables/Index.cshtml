@@ -27,25 +27,28 @@
                 @Html.DisplayNameFor(model => model.Status)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Summary)
+                @Html.DisplayNameFor(model => model.Num_Defendants)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.GrandJury)
+                @Html.DisplayNameFor(model => model.State)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.arrestchargedetail.ACDId)
+                @Html.DisplayNameFor(model => model.FederalDistrict)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.court.Name)
+                @Html.DisplayNameFor(model => model.CourtId)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.defense.Name)
+                @Html.DisplayNameFor(model => model.DefenseId)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.sentence.SentenceId)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.victim.VictimsId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.arrestchargedetail.ACDId)
             </th>
             <th></th>
         </tr>
@@ -62,25 +65,28 @@
                 @Html.DisplayFor(modelItem => item.Status)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Summary)
+                @Html.DisplayFor(modelItem => item.Num_Defendants)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.GrandJury)
+                @Html.DisplayFor(modelItem => item.State)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.arrestchargedetail.ACDId)
+                @Html.DisplayFor(modelItem => item.FederalDistrict)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.court.Name)
+                @Html.DisplayFor(modelItem => item.CourtId)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.defense.Name)
+                @Html.DisplayFor(modelItem => item.DefenseId)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.sentence.SentenceId)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.victim.VictimsId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.arrestchargedetail.ACDId)
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id=item.CaseId }) |

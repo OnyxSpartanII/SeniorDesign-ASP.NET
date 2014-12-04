@@ -22,8 +22,6 @@
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             @Html.HiddenFor(model => model.ChargeId)
     
-            @Html.HiddenFor(model => model.Type)
-    
             <div class="form-group">
                 @Html.LabelFor(model => model.ArrestChargeDetails_Id, "ArrestChargeDetails_Id", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -41,6 +39,14 @@
             </div>
     
             <div class="form-group">
+                @Html.LabelFor(model => model.CountsNolelProssed, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.CountsNolelProssed, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.CountsNolelProssed, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
                 @Html.LabelFor(model => model.Statute, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.Statute, new { htmlAttributes = new { @class = "form-control" } })
@@ -49,26 +55,58 @@
             </div>
     
             <div class="form-group">
-                @Html.LabelFor(model => model.Details, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.LabelFor(model => model.PleaDismissed, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.Details, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Details, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.PleaDismissed, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.PleaDismissed, "", new { @class = "text-danger" })
                 </div>
             </div>
     
             <div class="form-group">
-                @Html.LabelFor(model => model.Plea, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.LabelFor(model => model.PleaGuilty, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.Plea, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Plea, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.PleaGuilty, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.PleaGuilty, "", new { @class = "text-danger" })
                 </div>
             </div>
     
             <div class="form-group">
-                @Html.LabelFor(model => model.Disposition, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.LabelFor(model => model.TrialGuilty, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.Disposition, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Disposition, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.TrialGuilty, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.TrialGuilty, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.TrialNotGuilty, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.TrialNotGuilty, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.TrialNotGuilty, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.Fines, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Fines, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Fines, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.Sentence, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Sentence, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Sentence, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.Probation, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Probation, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Probation, "", new { @class = "text-danger" })
                 </div>
             </div>
     

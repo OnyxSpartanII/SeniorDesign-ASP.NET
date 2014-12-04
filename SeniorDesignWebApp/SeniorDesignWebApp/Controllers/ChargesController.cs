@@ -48,7 +48,7 @@ namespace SeniorDesignWebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ChargeId,Type,ArrestChargeDetails_Id,Counts,Statute,Details,Plea,Disposition")] charge charge)
+        public ActionResult Create([Bind(Include = "ChargeId,ArrestChargeDetails_Id,Counts,CountsNolelProssed,Statute,PleaDismissed,PleaGuilty,TrialGuilty,TrialNotGuilty,Fines,Sentence,Probation")] charge charge)
         {
             if (ModelState.IsValid)
             {
@@ -82,7 +82,7 @@ namespace SeniorDesignWebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ChargeId,Type,ArrestChargeDetails_Id,Counts,Statute,Details,Plea,Disposition")] charge charge)
+        public ActionResult Edit([Bind(Include = "ChargeId,ArrestChargeDetails_Id,Counts,CountsNolelProssed,Statute,PleaDismissed,PleaGuilty,TrialGuilty,TrialNotGuilty,Fines,Sentence,Probation")] charge charge)
         {
             if (ModelState.IsValid)
             {

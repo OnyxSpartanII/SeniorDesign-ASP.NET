@@ -18,31 +18,28 @@
     <table class="table">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.DispositionDate)
+                @Html.DisplayNameFor(model => model.DateTerminated)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.SentenceDate)
+                @Html.DisplayNameFor(model => model.Date)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.JailTime)
+                @Html.DisplayNameFor(model => model.Total)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ProbationTime)
+                @Html.DisplayNameFor(model => model.Restitution)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.SuspendedTime)
+                @Html.DisplayNameFor(model => model.AssetForfeit)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Fines)
+                @Html.DisplayNameFor(model => model.Appeal)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CommServ)
+                @Html.DisplayNameFor(model => model.SupervisedRelease)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.COR)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CCD_Id)
+                @Html.DisplayNameFor(model => model.Probation)
             </th>
             <th></th>
         </tr>
@@ -50,31 +47,28 @@
     @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.DispositionDate)
+                @Html.DisplayFor(modelItem => item.DateTerminated)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.SentenceDate)
+                @Html.DisplayFor(modelItem => item.Date)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.JailTime)
+                @Html.DisplayFor(modelItem => item.Total)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ProbationTime)
+                @Html.DisplayFor(modelItem => item.Restitution)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.SuspendedTime)
+                @Html.DisplayFor(modelItem => item.AssetForfeit)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Fines)
+                @Html.DisplayFor(modelItem => item.Appeal)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CommServ)
+                @Html.DisplayFor(modelItem => item.SupervisedRelease)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.COR)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CCD_Id)
+                @Html.DisplayFor(modelItem => item.Probation)
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id=item.SentenceId }) |

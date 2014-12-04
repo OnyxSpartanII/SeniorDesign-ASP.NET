@@ -17,7 +17,7 @@ namespace SeniorDesignWebApp.Controllers
         // GET: CaseTables
         public ActionResult Index()
         {
-            var casetables = db.casetables.Include(c => c.arrestchargedetail).Include(c => c.court).Include(c => c.defense).Include(c => c.sentence).Include(c => c.victim);
+            var casetables = db.casetables.Include(c => c.sentence).Include(c => c.victim).Include(c => c.arrestchargedetail);
             return View(casetables.ToList());
         }
 
@@ -39,11 +39,9 @@ namespace SeniorDesignWebApp.Controllers
         // GET: CaseTables/Create
         public ActionResult Create()
         {
-            ViewBag.ACDId = new SelectList(db.arrestchargedetails, "ACDId", "ACDId");
-            ViewBag.CourtId = new SelectList(db.courts, "CourtId", "Name");
-            ViewBag.DefenseId = new SelectList(db.defenses, "DefenseId", "Name");
             ViewBag.SentenceId = new SelectList(db.sentences, "SentenceId", "SentenceId");
             ViewBag.VictimsId = new SelectList(db.victims, "VictimsId", "VictimsId");
+            ViewBag.ACDId = new SelectList(db.arrestchargedetails, "ACDId", "ACDId");
             return View();
         }
 
@@ -52,7 +50,7 @@ namespace SeniorDesignWebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CaseId,Name,Number,Status,Summary,GrandJury,CourtId,DefenseId,VictimsId,ACDId,SentenceId")] casetable casetable)
+        public ActionResult Create([Bind(Include = "CaseId,Name,Number,Status,Num_Defendants,State,FederalDistrict,CourtId,DefenseId,VictimsId,ACDId,SentenceId")] casetable casetable)
         {
             if (ModelState.IsValid)
             {
@@ -61,11 +59,9 @@ namespace SeniorDesignWebApp.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.ACDId = new SelectList(db.arrestchargedetails, "ACDId", "ACDId", casetable.ACDId);
-            ViewBag.CourtId = new SelectList(db.courts, "CourtId", "Name", casetable.CourtId);
-            ViewBag.DefenseId = new SelectList(db.defenses, "DefenseId", "Name", casetable.DefenseId);
             ViewBag.SentenceId = new SelectList(db.sentences, "SentenceId", "SentenceId", casetable.SentenceId);
             ViewBag.VictimsId = new SelectList(db.victims, "VictimsId", "VictimsId", casetable.VictimsId);
+            ViewBag.ACDId = new SelectList(db.arrestchargedetails, "ACDId", "ACDId", casetable.ACDId);
             return View(casetable);
         }
 
@@ -81,11 +77,9 @@ namespace SeniorDesignWebApp.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.ACDId = new SelectList(db.arrestchargedetails, "ACDId", "ACDId", casetable.ACDId);
-            ViewBag.CourtId = new SelectList(db.courts, "CourtId", "Name", casetable.CourtId);
-            ViewBag.DefenseId = new SelectList(db.defenses, "DefenseId", "Name", casetable.DefenseId);
             ViewBag.SentenceId = new SelectList(db.sentences, "SentenceId", "SentenceId", casetable.SentenceId);
             ViewBag.VictimsId = new SelectList(db.victims, "VictimsId", "VictimsId", casetable.VictimsId);
+            ViewBag.ACDId = new SelectList(db.arrestchargedetails, "ACDId", "ACDId", casetable.ACDId);
             return View(casetable);
         }
 
@@ -94,7 +88,7 @@ namespace SeniorDesignWebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CaseId,Name,Number,Status,Summary,GrandJury,CourtId,DefenseId,VictimsId,ACDId,SentenceId")] casetable casetable)
+        public ActionResult Edit([Bind(Include = "CaseId,Name,Number,Status,Num_Defendants,State,FederalDistrict,CourtId,DefenseId,VictimsId,ACDId,SentenceId")] casetable casetable)
         {
             if (ModelState.IsValid)
             {
@@ -102,11 +96,9 @@ namespace SeniorDesignWebApp.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.ACDId = new SelectList(db.arrestchargedetails, "ACDId", "ACDId", casetable.ACDId);
-            ViewBag.CourtId = new SelectList(db.courts, "CourtId", "Name", casetable.CourtId);
-            ViewBag.DefenseId = new SelectList(db.defenses, "DefenseId", "Name", casetable.DefenseId);
             ViewBag.SentenceId = new SelectList(db.sentences, "SentenceId", "SentenceId", casetable.SentenceId);
             ViewBag.VictimsId = new SelectList(db.victims, "VictimsId", "VictimsId", casetable.VictimsId);
+            ViewBag.ACDId = new SelectList(db.arrestchargedetails, "ACDId", "ACDId", casetable.ACDId);
             return View(casetable);
         }
 

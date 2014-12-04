@@ -24,10 +24,25 @@
                 @Html.DisplayNameFor(model => model.ArrestDate)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Detained)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Role)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.bail.BailId)
+                @Html.DisplayNameFor(model => model.LaborTraf)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AdultSexTraf)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MinorSexTraf)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fel_C)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fel_S)
             </th>
             <th></th>
         </tr>
@@ -41,10 +56,25 @@
                 @Html.DisplayFor(modelItem => item.ArrestDate)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.Detained)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Role)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.bail.BailId)
+                @Html.DisplayFor(modelItem => item.LaborTraf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdultSexTraf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MinorSexTraf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fel_C)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fel_S)
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id=item.ACDId }) |

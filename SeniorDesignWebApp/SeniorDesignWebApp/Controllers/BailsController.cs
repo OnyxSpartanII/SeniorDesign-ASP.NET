@@ -17,7 +17,8 @@ namespace SeniorDesignWebApp.Controllers
         // GET: Bails
         public ActionResult Index()
         {
-            return View(db.bails.ToList());
+            var bails = db.bails.Include(b => b.arrestchargedetail);
+            return View(bails.ToList());
         }
 
         // GET: Bails/Details/5
@@ -38,6 +39,7 @@ namespace SeniorDesignWebApp.Controllers
         // GET: Bails/Create
         public ActionResult Create()
         {
+            ViewBag.ArrestChargeDetails_ACDId = new SelectList(db.arrestchargedetails, "ACDId", "ACDId");
             return View();
         }
 
@@ -46,7 +48,7 @@ namespace SeniorDesignWebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "BailId,Type,Detained,Amount")] bail bail)
+        public ActionResult Create([Bind(Include = "BailId,Type,Amount,ArrestChargeDetails_ACDId")] bail bail)
         {
             if (ModelState.IsValid)
             {
@@ -55,6 +57,7 @@ namespace SeniorDesignWebApp.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.ArrestChargeDetails_ACDId = new SelectList(db.arrestchargedetails, "ACDId", "ACDId", bail.ArrestChargeDetails_ACDId);
             return View(bail);
         }
 
@@ -70,6 +73,7 @@ namespace SeniorDesignWebApp.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.ArrestChargeDetails_ACDId = new SelectList(db.arrestchargedetails, "ACDId", "ACDId", bail.ArrestChargeDetails_ACDId);
             return View(bail);
         }
 
@@ -78,7 +82,7 @@ namespace SeniorDesignWebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "BailId,Type,Detained,Amount")] bail bail)
+        public ActionResult Edit([Bind(Include = "BailId,Type,Amount,ArrestChargeDetails_ACDId")] bail bail)
         {
             if (ModelState.IsValid)
             {
@@ -86,6 +90,7 @@ namespace SeniorDesignWebApp.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.ArrestChargeDetails_ACDId = new SelectList(db.arrestchargedetails, "ACDId", "ACDId", bail.ArrestChargeDetails_ACDId);
             return View(bail);
         }
 

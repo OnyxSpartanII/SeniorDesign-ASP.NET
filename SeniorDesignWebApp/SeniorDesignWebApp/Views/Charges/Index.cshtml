@@ -21,16 +21,31 @@
                 @Html.DisplayNameFor(model => model.Counts)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.CountsNolelProssed)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Statute)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Details)
+                @Html.DisplayNameFor(model => model.PleaDismissed)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Plea)
+                @Html.DisplayNameFor(model => model.PleaGuilty)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Disposition)
+                @Html.DisplayNameFor(model => model.TrialGuilty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TrialNotGuilty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fines)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sentence)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Probation)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.arrestchargedetail.ACDId)
@@ -44,24 +59,39 @@
                 @Html.DisplayFor(modelItem => item.Counts)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.CountsNolelProssed)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Statute)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Details)
+                @Html.DisplayFor(modelItem => item.PleaDismissed)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Plea)
+                @Html.DisplayFor(modelItem => item.PleaGuilty)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Disposition)
+                @Html.DisplayFor(modelItem => item.TrialGuilty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TrialNotGuilty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fines)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sentence)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Probation)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.arrestchargedetail.ACDId)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                @Html.ActionLink("Edit", "Edit", new { id=item.ChargeId }) |
+                @Html.ActionLink("Details", "Details", new { id=item.ChargeId }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.ChargeId })
             </td>
         </tr>
     }
