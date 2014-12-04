@@ -227,14 +227,9 @@
     <Compile Include="Controllers\BailsController.cs" />
     <Compile Include="Controllers\CaseTablesController.cs" />
     <Compile Include="Controllers\ChargesController.cs" />
-    <Compile Include="Controllers\CourtsController.cs" />
     <Compile Include="Controllers\DefendantsController.cs" />
-    <Compile Include="Controllers\DefensesController.cs" />
-    <Compile Include="Controllers\HearingsController.cs" />
     <Compile Include="Controllers\JudgesController.cs" />
-    <Compile Include="Controllers\MotionsController.cs" />
     <Compile Include="Controllers\OrganizedCrimeGroupsController.cs" />
-    <Compile Include="Controllers\ProsecutorsController.cs" />
     <Compile Include="Controllers\SentencesController.cs" />
     <Compile Include="Controllers\UploadController.cs" />
     <Compile Include="Controllers\VictimsController.cs" />
