@@ -6,7 +6,7 @@ using System.Web;
 
 namespace SeniorDesignWebApp.Models
 {
-    public class AdminPanelModel
+    public class AdminPanel
     {
         [Required]
         public HttpPostedFileBase File { get; set; }
