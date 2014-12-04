@@ -16,58 +16,29 @@ namespace SeniorDesignWebApp
     {
         public casetable()
         {
-            this.defendants = new HashSet<defendant>();
-            this.hearings = new HashSet<hearing>();
-            this.judges = new HashSet<judge>();
-            this.motions = new HashSet<motion>();
             this.organizedcrimegroups = new HashSet<organizedcrimegroup>();
-            this.prosecutors = new HashSet<prosecutor>();
-        }
-
-        public casetable(long cid, string nam, string num, bool stat, string summ, bool gj, long courtid, long defid, long vid, long acdid, long sentid)
-        {
-            this.CaseId = cid;
-            this.Name = nam;
-            this.Number = num;
-            this.Status = stat;
-            this.Summary = summ;
-            this.GrandJury = gj;
-            this.CourtId = courtid;
-            this.DefenseId = defid;
-            this.VictimsId = vid;
-            this.ACDId = acdid;
-            this.SentenceId = sentid;
-
-            this.defendants = new HashSet<defendant>();
-            this.hearings = new HashSet<hearing>();
             this.judges = new HashSet<judge>();
-            this.motions = new HashSet<motion>();
-            this.organizedcrimegroups = new HashSet<organizedcrimegroup>();
-            this.prosecutors = new HashSet<prosecutor>();
+            this.defendants = new HashSet<defendant>();
         }
     
         public long CaseId { get; set; }
         public string Name { get; set; }
         public string Number { get; set; }
         public bool Status { get; set; }
-        public string Summary { get; set; }
-        public bool GrandJury { get; set; }
+        public Nullable<long> Num_Defendants { get; set; }
+        public string State { get; set; }
+        public long FederalDistrict { get; set; }
         public long CourtId { get; set; }
         public long DefenseId { get; set; }
         public long VictimsId { get; set; }
         public long ACDId { get; set; }
         public long SentenceId { get; set; }
     
-        public virtual arrestchargedetail arrestchargedetail { get; set; }
-        public virtual court court { get; set; }
-        public virtual defense defense { get; set; }
         public virtual sentence sentence { get; set; }
         public virtual victim victim { get; set; }
-        public virtual ICollection<defendant> defendants { get; set; }
-        public virtual ICollection<hearing> hearings { get; set; }
-        public virtual ICollection<judge> judges { get; set; }
-        public virtual ICollection<motion> motions { get; set; }
         public virtual ICollection<organizedcrimegroup> organizedcrimegroups { get; set; }
-        public virtual ICollection<prosecutor> prosecutors { get; set; }
+        public virtual arrestchargedetail arrestchargedetail { get; set; }
+        public virtual ICollection<judge> judges { get; set; }
+        public virtual ICollection<defendant> defendants { get; set; }
     }
 }

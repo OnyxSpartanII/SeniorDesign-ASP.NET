@@ -16,18 +16,7 @@ namespace SeniorDesignWebApp
     {
         public arrestchargedetail()
         {
-            this.casetables = new HashSet<casetable>();
-            this.charges = new HashSet<charge>();
-        }
-
-        public arrestchargedetail(long acdid, System.DateTime cdate, System.DateTime adate, long bid, bool r)
-        {
-            this.ACDId = acdid;
-            this.ChargeDate = cdate;
-            this.ArrestDate = adate;
-            this.BailId = bid;
-            this.Role = r;
-
+            this.bails = new HashSet<bail>();
             this.casetables = new HashSet<casetable>();
             this.charges = new HashSet<charge>();
         }
@@ -35,10 +24,15 @@ namespace SeniorDesignWebApp
         public long ACDId { get; set; }
         public System.DateTime ChargeDate { get; set; }
         public System.DateTime ArrestDate { get; set; }
-        public long BailId { get; set; }
+        public bool Detained { get; set; }
         public bool Role { get; set; }
+        public bool LaborTraf { get; set; }
+        public bool AdultSexTraf { get; set; }
+        public bool MinorSexTraf { get; set; }
+        public int Fel_C { get; set; }
+        public int Fel_S { get; set; }
     
-        public virtual bail bail { get; set; }
+        public virtual ICollection<bail> bails { get; set; }
         public virtual ICollection<casetable> casetables { get; set; }
         public virtual ICollection<charge> charges { get; set; }
     }

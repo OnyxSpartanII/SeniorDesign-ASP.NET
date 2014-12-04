@@ -18,17 +18,6 @@ namespace SeniorDesignWebApp
         {
             this.casetables = new HashSet<casetable>();
         }
-
-        public victim(long vid, int t, int m, int fo, int fe)
-        {
-            this.VictimsId = vid;
-            this.Total = t;
-            this.Minor = m;
-            this.Foreigner = fo;
-            this.Female = fe;
-            
-            this.casetables = new HashSet<casetable>();
-        }
     
         public long VictimsId { get; set; }
         public int Total { get; set; }

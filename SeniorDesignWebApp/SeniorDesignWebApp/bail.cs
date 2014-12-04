@@ -14,25 +14,11 @@ namespace SeniorDesignWebApp
     
     public partial class bail
     {
-        public bail()
-        {
-            this.arrestchargedetails = new HashSet<arrestchargedetail>();
-        }
-
-        public bail(long bid, bool t, bool d, double a)
-        {
-            this.BailId = bid;
-            this.Type = t;
-            this.Detained = d;
-            this.Amount = a;
-            this.arrestchargedetails = new HashSet<arrestchargedetail>();
-        }
-    
         public long BailId { get; set; }
         public bool Type { get; set; }
-        public bool Detained { get; set; }
         public double Amount { get; set; }
+        public long ArrestChargeDetails_ACDId { get; set; }
     
-        public virtual ICollection<arrestchargedetail> arrestchargedetails { get; set; }
+        public virtual arrestchargedetail arrestchargedetail { get; set; }
     }
 }

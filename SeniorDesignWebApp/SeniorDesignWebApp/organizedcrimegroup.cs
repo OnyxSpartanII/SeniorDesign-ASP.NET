@@ -18,21 +18,12 @@ namespace SeniorDesignWebApp
         {
             this.casetables = new HashSet<casetable>();
         }
-
-        public organizedcrimegroup(long oid, string n, int si, int sc)
-        {
-            this.OCGId = oid;
-            this.Name = n;
-            this.Size = si;
-            this.Scope = sc;
-
-            this.casetables = new HashSet<casetable>();
-        }
     
         public long OCGId { get; set; }
         public string Name { get; set; }
         public int Size { get; set; }
         public int Scope { get; set; }
+        public int Race { get; set; }
     
         public virtual ICollection<casetable> casetables { get; set; }
     }
