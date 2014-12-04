@@ -1,3 +1,7 @@
+﻿
+
+
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -8,16 +12,38 @@
 	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css' />
 </head>
 
+@model 
 
+@{
+    ViewBag.Title = "";
+    ViewBag.MissionId = id;
+    ViewBag.id = 0;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Styles {
+<!-- main CSS -->
+<link href="@Url.Content(" ~ />Content/Site.css)" rel="stylesheet" type="text/css" />
+
+<!-- some external CSS -->
+<link href="http://www.example.com/foo.css" rel="stylesheet" type="text/css" />
+
+<!-- some inline CSS -->
+<style type="text/css">
+    img[src*="iws3.png"] {
+        display: none;
+    }
+</style>
+}
 <body>
 
 <div id="wrap">
 	<div id="header">
 		<div id="headerlinks">
-		<a href="index.html" class="case_active" title="Case">Case</a>
-		<a href="court.html" title="Court">Court</a>
-		<a href="defendant.html" title="Defendant">Defendant</a>
-		<a href="upload.html" title="Batch Upload">Batch Upload</a>
+		<a href="~/Views/AdminPanel/index.cshtml" class="case_active" title="Case">Case</a>
+		<a href="~/Views/AdminPanel/court.cshtml" title="Court">Court</a>
+		<a href="~/Views/AdminPanel/defendant.cshtml" title="Defendant">Defendant</a>
+		<a href="~/Views/AdminPanel/upload.cshtml" title="Batch Upload">Batch Upload</a>
 		</div>
 		<h1><a href="index.html">Admin Control Panel | HTD</a></h1>
 	</div>

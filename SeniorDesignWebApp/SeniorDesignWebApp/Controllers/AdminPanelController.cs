@@ -19,7 +19,7 @@ namespace SeniorDesignWebApp.Controllers
         }
         /** Uploading File feature */
         [HttpPost]
-        public ActionResult Index(SeniorDesignWebApp.Models.upload model)
+        public ActionResult Index(SeniorDesignWebApp.Models.AdminPanel model)
         {
             var path = System.IO.Directory.GetCurrentDirectory() + "/upload.csv";
 
