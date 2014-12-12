@@ -4,17 +4,19 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Human Trafficking Data</title>
-    <link href="@Url.Content("~/Content/css/Site.css")" rel="stylesheet" type="text/css"
+    <link href="@Url.Content("~/Content/css/Site.css")" rel="stylesheet" type="text/css"/>
+    <link href="@Url.Content("~/Content/css/Site.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/css/Site.css")" rel="stylesheet" type="text/css"/>
+
     @RenderSection("Styles", required: false)
 </head>
 
 <body>
-    <div class="">
         <div class="container">
 
             <div class="navbar">
                 <div class="logo">
-                    <h1>@Html.ActionLink("Human Trafficking Data", "Index", "SiteIndex", null, new { @class = "navbar-brand" })</h1>
+                    <h1>@Html.ActionLink("Human Trafficking Data", "Index", "SiteIndex", null, new { @class = "logo" })</h1>
                 </div>
 
                 <div class="menu">
@@ -36,7 +38,6 @@
 
             </div>
         </div>
-    </div>
 
     <div class="container body-content">
         @RenderBody()
