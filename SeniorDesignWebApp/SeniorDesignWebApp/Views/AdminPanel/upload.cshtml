@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<title>Batch  | Admin Control Panel HTD</title>
@@ -8,6 +8,18 @@
 	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css' />
 </head>
 
+@model SeniorDesignWebApp.Models.AdminPanel
+
+@{
+    ViewBag.Title = "";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Styles {
+<!-- main CSS -->
+<link href="~/Content/css/style.css" rel="stylesheet" type="text/css" />
+
+}
 
 <body>
 
@@ -18,6 +30,7 @@
 		<a href="court.html" title="Court">Court</a>
 		<a href="defendant.html" title="Defendant">Defendant</a>
 		<a href="upload.html" class="upload_active" title="Batch Upload">Batch Upload</a>
+		<a href="off.html" title="Log Off">LogOff</a>
 		</div>
 		<h1><a href="index.html">Admin Control Panel | HTD</a></h1>
 	</div>
@@ -44,18 +57,19 @@
 
 </table>
 		<br><br><br><br><br><br><br>
-		<input type="submit" style="font-size:20px; margin-left:0px; width:200px; height:50px; background-color:#f05; border:none; color:#fff;" value="Upload New Batch" name="case_submit">
+		<input type="submit" style="font-size:20px; margin-left:0px; width:200px; height:50px; background-color:#db1a03; border:none; color:#fff;" value="Upload New Batch" name="case_submit">
 
 	</form>
 
 
-		<h4 style="color:#F05; margin-top:600px;">*Uploading...</h4>
+		<h4 style="color:#db1a03; margin-top:600px;">*Uploading...</h4>
 
 	</div>
 
 	<div id="footer">
 		Admin Control Panel HTD V 0.1 | <a target="_blank" href="http://humantraffickingdata.org" title="Human Trafficking Data Website">Human Trafficking Data</a>
-	</div>
+        <p>&copy; @DateTime.Now.Year - Judge Frog</p>
+    </div>
 
 </div>
 

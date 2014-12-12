@@ -15,7 +15,22 @@ namespace SeniorDesignWebApp.Controllers
         public ActionResult Index()
         {
             var model = new SeniorDesignWebApp.Models.AdminPanel();
-            return View(model);
+            return View("Index", "_Layout", model);
+        }
+
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        public ActionResult Edit()
+        {
+            return View();
+        }
+
+        public ActionResult Delete()
+        {
+            return View();
         }
         /** Uploading File feature */
         [HttpPost]
