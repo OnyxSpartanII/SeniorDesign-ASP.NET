@@ -38,11 +38,13 @@
 <div id="wrap">
 	<div id="header">
 		<div id="headerlinks">
-		<a href="~/Views/AdminPanel/index.cshtml" class="case_active" title="Case">Case</a>
-		<a href="~/Views/AdminPanel/court.cshtml" title="Court">Court</a>
-		<a href="~/Views/AdminPanel/defendant.cshtml" title="Defendant">Defendant</a>
-		<a href="~/Views/AdminPanel/upload.cshtml" title="Batch Upload">Batch Upload</a>
-		</div>
+            <ul>
+                <li><a href="~/Views/AdminPanel/index.cshtml" class="case_active" title="Case">Case</a></li>
+                <li><a href="~/Views/AdminPanel/court.cshtml" title="Court">Court</a></li>
+                <li><a href="~/Views/AdminPanel/defendant.cshtml" title="Defendant">Defendant</a></li>
+                <li><a href="~/Views/AdminPanel/upload.cshtml" title="Batch Upload">Batch Upload</a></li>
+            </ul>
+        </div>
 		<h1><a href="index.html">Admin Control Panel | HTD</a></h1>
 	</div>
 

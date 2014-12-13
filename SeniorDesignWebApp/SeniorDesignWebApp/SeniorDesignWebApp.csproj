@@ -274,11 +274,18 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\css\reset.css" />
+    <Content Include="Content\css\responsive.css" />
     <Content Include="Content\css\Site.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\css\in-style.css" />
     <Content Include="Content\css\style.css" />
     <Content Include="Content\img\background.png" />
+    <Content Include="Content\img\img03.jpg" />
+    <Content Include="Content\js\custom.js" />
+    <Content Include="Content\js\jquery.js" />
+    <Content Include="Content\js\slider.js" />
+    <Content Include="Content\js\superfish.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
