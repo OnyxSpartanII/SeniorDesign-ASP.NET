@@ -104,21 +104,12 @@
     <Reference Include="MsieJavaScriptEngine">
       <HintPath>..\packages\MsieJavaScriptEngine.1.4.0\lib\net40\MsieJavaScriptEngine.dll</HintPath>
     </Reference>
-<<<<<<< HEAD
-    <Reference Include="MySql.Data, Version=6.9.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
-    <Reference Include="MySql.Data.CF, Version=6.9.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
-    <Reference Include="MySql.Data.Entity, Version=6.9.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
-    <Reference Include="MySql.Data.Entity.EF6, Version=6.9.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
-    <Reference Include="MySql.Fabric.Plugin, Version=6.9.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
-    <Reference Include="MySql.Web.v20, Version=6.9.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
-=======
     <Reference Include="MySql.Data, Version=6.9.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="MySql.Data.CF, Version=6.9.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="MySql.Data.Entity.EF5, Version=6.9.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="MySql.Data.Entity.EF6, Version=6.9.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="MySql.Fabric.Plugin, Version=6.9.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="MySql.Web.v20, Version=6.9.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
->>>>>>> 52423f95af104c16a47a23d3a85513860951b112
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Newtonsoft.Json.6.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -232,10 +223,7 @@
     <Compile Include="charge.cs">
       <DependentUpon>JudgeFrogDb.tt</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-=======
     <Compile Include="Controllers\AdminPanelController.cs" />
->>>>>>> 52423f95af104c16a47a23d3a85513860951b112
     <Compile Include="Controllers\ArrestChargeDetailsController.cs" />
     <Compile Include="Controllers\BailsController.cs" />
     <Compile Include="Controllers\CaseTablesController.cs" />
@@ -271,10 +259,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>JudgeFrogDb.edmx</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-=======
     <Compile Include="Models\AdminPanel.cs" />
->>>>>>> 52423f95af104c16a47a23d3a85513860951b112
     <Compile Include="Models\upload.cs" />
     <Compile Include="organizedcrimegroup.cs">
       <DependentUpon>JudgeFrogDb.tt</DependentUpon>
@@ -289,28 +274,19 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-<<<<<<< HEAD
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
-=======
-=======
     <Content Include="Content\css\reset.css" />
     <Content Include="Content\css\responsive.css" />
->>>>>>> e39770d6310eaf1ef2c1f3c1f3e0deeb08d2696c
     <Content Include="Content\css\Site.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\css\in-style.css" />
     <Content Include="Content\css\style.css" />
     <Content Include="Content\img\background.png" />
-<<<<<<< HEAD
->>>>>>> 52423f95af104c16a47a23d3a85513860951b112
-=======
     <Content Include="Content\img\img03.jpg" />
     <Content Include="Content\js\custom.js" />
     <Content Include="Content\js\jquery.js" />
     <Content Include="Content\js\slider.js" />
     <Content Include="Content\js\superfish.js" />
->>>>>>> e39770d6310eaf1ef2c1f3c1f3e0deeb08d2696c
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -398,8 +374,6 @@
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-<<<<<<< HEAD
-=======
     <None Include="Views\AdminPanel\Old\court.cshtml.old" />
     <None Include="Views\AdminPanel\create.cshtml" />
     <Content Include="Views\AdminPanel\create\newcase.html" />
@@ -418,7 +392,6 @@
     <None Include="Views\AdminPanel\index.cshtml" />
     <Content Include="Views\AdminPanel\off.html" />
     <None Include="Views\AdminPanel\upload.cshtml" />
->>>>>>> 52423f95af104c16a47a23d3a85513860951b112
     <Content Include="Views\ArrestChargeDetails\Create.cshtml" />
     <Content Include="Views\ArrestChargeDetails\Delete.cshtml" />
     <Content Include="Views\ArrestChargeDetails\Details.cshtml" />
@@ -440,14 +413,11 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\Upload\Index.cshtml" />
-<<<<<<< HEAD
-=======
     <Content Include="Views\CaseTables\Create.cshtml" />
     <Content Include="Views\CaseTables\Delete.cshtml" />
     <Content Include="Views\CaseTables\Details.cshtml" />
     <Content Include="Views\CaseTables\Edit.cshtml" />
     <Content Include="Views\CaseTables\Index.cshtml" />
->>>>>>> 52423f95af104c16a47a23d3a85513860951b112
     <Content Include="Views\Charges\Create.cshtml" />
     <Content Include="Views\Charges\Delete.cshtml" />
     <Content Include="Views\Charges\Details.cshtml" />
@@ -478,7 +448,6 @@
     <Content Include="Views\Victims\Details.cshtml" />
     <Content Include="Views\Victims\Edit.cshtml" />
     <Content Include="Views\Victims\Index.cshtml" />
-<<<<<<< HEAD
     <Content Include="Views\CaseTables\Create.cshtml" />
     <Content Include="Views\CaseTables\Delete.cshtml" />
     <Content Include="Views\CaseTables\Details.cshtml" />
@@ -490,7 +459,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\AdminPanel\" />
-=======
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\SiteIndex\Index.cshtml" />
     <Content Include="Views\AdminPanel\.DS_Store" />
@@ -499,7 +467,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
->>>>>>> 52423f95af104c16a47a23d3a85513860951b112
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
