@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Home | Admin Control Panel - HTD</title>
+	<meta http-equiv="Content-Language" content="English" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
+	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'/>
+    @Styles.Render("~/bundles/css")
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+
+@model SeniorDesignWebApp.Models.AdminPanel
+
+@{
+    ViewBag.Title = "Admin Panel Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Styles {
+<!-- main CSS -->
+<link href="@Url.Content("~/Content/css/style.css")" rel="stylesheet" type="text/css" />
+
+}
+
+<body>
+
+<div id="wrap">
+	<div id="header">
+        <div id="headerlinks">
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Home", "", "AdminPanel/Index")</li>
+                <li>@Html.ActionLink("Create", "", "AdminPanel/Create")</li>
+                <li>@Html.ActionLink("Edit", "", "AdminPanel/Edit")</li>
+                <li>@Html.ActionLink("Delete", "", "AdminPanel/Delete")</li>
+             <!--   <a href="./index.html" class="home_active" title="Home">Home</a>
+                <a href="./create.html" title="Create">Create</a>
+                <a href="./edit.html" title="Edit">Edit</a>
+                <a href="./delete.html" title="Delete">Delete</a>-->
+            </ul>
+         </div>
+        <h1><a href="index.html">Admin Control Panel | HTD</a></h1>
+	</div>
+
+
+	<div id="content" style="height:900px">
+
+
+	<h1>Welcome | Find Practical Instructions Below</h1>
+
+<div>
+
+	<table class="tg">
+
+
+	<tr>
+		<th class="tg-4kyz" colspan="1">How to create new cases, defendants, courts...</th>
+	</tr>
+	<tr>
+		<td>
+				<h2>Content will soon be added</h2>
+			<p style="margin-bottom:200px"></p>
+		</td>
+	</tr>
+
+	<tr>
+		<th class="tg-4kyz" colspan="1">How to delete cases, defendants, courts...</th>
+	</tr>
+	<tr>
+		<td>
+				<h2>Content will soon be added</h2>
+			<p style="margin-bottom:200px"></p>
+		</td>
+	</tr>
+
+	<tr>
+		<th class="tg-4kyz" colspan="1">How to edit cases, defendants, courts...</th>
+	</tr>
+	<tr>
+		<td>
+				<h2>Content will soon be added</h2>
+			<p style="margin-bottom:200px"></p>
+		</td>
+	</tr>
+
+
+	<tr>
+		<th class="tg-4kyz" colspan="1">How to do a Batch Upload of Data</th>
+	</tr>
+	<tr>
+		<td>
+				<h2>Content will soon be added</h2>
+			
+		</td>
+	</tr>
+
+
+	</table>
+
+	</div>
+
+
+	</div>
+
+
+	<div id="footer">
+		Admin Control Panel HTD V 0.1 | <a target="_blank" href="http://humantraffickingdata.org" title="Human Trafficking Data Website">Human Trafficking Data</a>
+        <p>&copy; @DateTime.Now.Year - Judge Frog</p>
+    </div>
+
+</div>
+
+
+</body>
+
+
+
+</html>

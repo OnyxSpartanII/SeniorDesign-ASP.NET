@@ -290,14 +290,27 @@
   </ItemGroup>
   <ItemGroup>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
 =======
+=======
+    <Content Include="Content\css\reset.css" />
+    <Content Include="Content\css\responsive.css" />
+>>>>>>> e39770d6310eaf1ef2c1f3c1f3e0deeb08d2696c
     <Content Include="Content\css\Site.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\css\in-style.css" />
     <Content Include="Content\css\style.css" />
     <Content Include="Content\img\background.png" />
+<<<<<<< HEAD
 >>>>>>> 52423f95af104c16a47a23d3a85513860951b112
+=======
+    <Content Include="Content\img\img03.jpg" />
+    <Content Include="Content\js\custom.js" />
+    <Content Include="Content\js\jquery.js" />
+    <Content Include="Content\js\slider.js" />
+    <Content Include="Content\js\superfish.js" />
+>>>>>>> e39770d6310eaf1ef2c1f3c1f3e0deeb08d2696c
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

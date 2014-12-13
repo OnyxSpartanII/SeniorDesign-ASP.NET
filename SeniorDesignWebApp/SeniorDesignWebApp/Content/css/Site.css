@@ -1,0 +1,366 @@
+﻿* {
+	margin:0;
+	padding:0;
+	font-family: 'Philosopher', 'sans-serif';
+}
+
+body {
+	background: #fff;
+	margin:0;
+	padding:0;
+	font-family: 'Philosopher', 'sans-serif';
+	font-size: 1.1em;
+	color: #666;
+	font-weight: 400;
+	background-repeat: repeat;
+}
+a{
+	text-decoration: none;
+}
+
+p {
+	line-height: 1.9em;
+	margin-bottom: 20px;
+}
+
+
+
+h1 {
+	color: #000;
+	font-size: 2.7em;
+	margin-bottom: 10px;
+}
+
+h2 {
+	color: #444;
+	font-size: 2.5em;
+	letter-spacing: -1.5px;
+	padding: 0 0 10px;
+	font-weight: 300;
+	margin: 0;
+}
+
+
+li ol, li ul {
+	font-size: 1.0em;
+	margin-bottom: 0;
+}
+
+.width {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+
+#container {
+	background-color: #fff;
+	width: auto;
+	margin: 0 auto;
+}
+
+.fixed-header header {
+	position: fixed;
+	width: 100%;
+}
+
+header {
+	padding: 0px 10px 0;
+	margin: 0 auto;
+	text-align: left;
+	background-color: #333;
+}
+
+
+.logo  {
+    margin-left:-250px;
+	margin-top: 3px;
+	float: left;
+	font-size: 35px;
+}
+
+header h1 a, header h1 a:hover {
+    color: #fff;
+    padding: 25px 0px 0px;
+    letter-spacing: -2px;
+    border-bottom: none;
+    display: block;
+    font-weight: 300;
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+
+}
+
+header h1 a strong {
+	color: #f05;
+}
+
+/*Logo Hover*/
+.logo a:hover {
+    color: #f05;
+    padding: 25px 0px 0px;
+    letter-spacing: -2px;
+    border-bottom: none;
+    display: block;
+    font-weight: 300;
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+
+
+}
+
+nav {
+	float: right;
+}
+
+nav ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	text-align: left;
+}
+
+nav ul ul { 
+	margin-right: -100px;
+	padding: 0px 0px;
+}
+
+nav ul li {
+	display: block;
+	float: left;
+	padding: 0px;
+}
+
+nav ul li li {
+	padding: 0;
+}
+
+/*Menu Item List*/
+nav ul li a {
+	display: block;
+	float: left;
+	height: 15px;
+	padding: 40px 30px;
+    color: #fff;
+    font-size: 0.75em;
+    border-left: solid;
+    border-right: solid;
+	text-transform: uppercase;
+	letter-spacing: 0px;
+}
+
+
+/*Menu dropdown text*/
+nav ul li li a {
+	float: none;
+	padding: 10px 0px 10px 35px;
+}
+
+nav ul li a:hover {
+	color: #f05;
+	text-decoration: none;
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+
+}
+
+/*Hover About Tab*/
+nav ul li.selected a, nav ul li.selected a:hover {
+	color: #f05;
+	background-color: #555;
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+
+}
+
+nav ul li.selected a:hover {
+	background-color: #999 !important;
+	background-image: none !important;
+}
+
+/*Additional Tab Hover*/
+nav ul li a:hover, nav ul li.sfHover a {
+	color: #f05;
+	background-color: #555;
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+
+}
+
+
+nav ul li a.sf-with-ul:hover, nav ul li.sfHover a {
+	color: #f05;
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+
+}
+/*Additional Tab Hover Dropdown*/
+ nav ul li.sfHover ul a, nav ul ul {
+	background: #555;
+	color: #fff;
+}
+
+/*DropDown Menu*/
+nav ul li.sf-with-ul.selected ul a, nav ul li.selected ul, nav ul li.selected.sfHover a  {
+	background-color: #555;
+	color: #f05;
+}
+
+/*Drop down menu color*/
+nav ul li.sf-with-ul.selected ul li a, nav ul li.selected.sfHover li a,  nav ul li.sfHover a a, nav ul li.selected li a  {
+	color: #fff;
+}
+
+/*DropDown Menu Hover*/
+nav ul li.sf-with-ul.selected ul li a:hover, nav ul li.selected.sfHover ul li a:hover {
+	color: #f05;
+	-webkit-transition: all 0.3s ease-in;
+	-moz-transition: all 0.3s ease-in;
+	-o-transition: all 0.3s ease-in;
+}
+
+
+nav ul li li a:hover, nav ul li.sfHover li a:hover {
+	color: #f05;
+}
+
+/*** ESSENTIAL STYLES ***/
+.sf-menu, .sf-menu * {
+	list-style:		none;
+}
+.sf-menu {
+	line-height:	1.0;
+}
+.sf-menu ul {
+	position:		absolute;
+	top:			-999em;
+	width:			auto; /* left offset of submenus need to match (see below) */
+	margin-top: 	10px;
+}
+.sf-menu ul li {
+	width:			100%;
+}
+.sf-menu li:hover {
+	visibility:		inherit; /* fixes IE7 'sticky bug' */
+}
+.sf-menu li {
+	float:			left;
+	position:		relative;
+}
+.sf-menu a {
+	display:		block;
+	position:		relative;
+}
+.sf-menu li:hover ul,
+.sf-menu li.sfHover ul {
+	left:			0;
+	top:			60px; /* match top ul list item height */
+	z-index:		99;
+}
+ul.sf-menu li:hover li ul,
+ul.sf-menu li.sfHover li ul {
+	top:			-999em;
+}
+ul.sf-menu li li:hover ul,
+ul.sf-menu li li.sfHover ul {
+	left:			auto; /* match ul width */
+	top:			0;
+}
+ul.sf-menu li li:hover li ul,
+ul.sf-menu li li.sfHover li ul {
+	top:			-999em;
+}
+ul.sf-menu li li li:hover ul,
+ul.sf-menu li li li.sfHover ul {
+	left:			10em; /* match ul width */
+	top:			0;
+}
+
+/* intro */
+div#intro {
+	background-image: url('../img/img03.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+    margin-right:15px;
+}
+
+div#intro .intro-content {
+	/*padding: 65px 40px;*/
+	text-align: center;
+}
+
+div#intro div.intro-content-short {
+	/*padding: 30px 0 20px 20px;*/
+	text-align: left;
+}
+
+
+div#intro h2 {
+	text-shadow: 1px 1px 0 #000;
+	font-size: 3em;
+}
+
+div#intro h2, div#intro p {
+	color: #fff;
+	font-weight: bold;
+}
+
+div#intro p {
+	font-size: 1.3em;
+	color: #ddd;
+	line-height: 1.3em;
+}
+
+a.button-slider {
+	padding: 10px 15px;
+	font-size: 0.8em;
+	text-align: center;
+	border-color: #555;
+	margin: 5px 10px 5px 0;
+}
+
+a.button-slider.button-reversed {
+	border-color: #fff;
+}
+
+a.button-slider i { padding-right: 5px; }
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+#body {
+	background: none;
+	margin: 50px auto;
+ 	text-align: center;
+	clear: both;
+}
+
+.fixed-header #body { 
+	padding-top: 120px; 
+	margin-top: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+footer {
+	margin:50px auto;
+	background: #222;
+	border-top: 2px solid #777;
+}
+.footer-content{
+	text-align: center;
+	height: 50px;
+	margin-top: 35px;
+    padding-top:25px;
+	color: #fff;
+}
+

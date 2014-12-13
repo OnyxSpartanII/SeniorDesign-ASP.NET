@@ -1,0 +1,179 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Create | Admin Control Panel - HTD</title>
+	<meta http-equiv="Content-Language" content="English" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
+	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css' />
+</head>
+
+@model SeniorDesignWebApp.Models.AdminPanel
+
+@{
+    ViewBag.Title = "";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Styles {
+    <!-- main CSS -->
+    <link href="~/Content/css/style.css" rel="stylesheet" type="text/css" />
+}
+
+<body>
+
+<div id="wrap">
+
+	<div id="header">
+		<div id="headerlinks">
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Home", "", "AdminPanel/Index")</li>
+                <li>@Html.ActionLink("Create", "", "AdminPanel/Create")</li>
+                <li>@Html.ActionLink("Edit", "", "AdminPanel/Edit")</li>
+                <li>@Html.ActionLink("Delete", "", "AdminPanel/Delete")</li>
+                <!--   <a href="./index.html" class="home_active" title="Home">Home</a>
+           <a href="./create.html" title="Create">Create</a>
+           <a href="./edit.html" title="Edit">Edit</a>
+           <a href="./delete.html" title="Delete">Delete</a>-->
+            </ul>
+		</div>
+		<h1><a href="index.html" title="Home | Admin Control Panel">Admin Control Panel | HTD</a></h1>
+	</div>
+
+
+	<div id="content">
+
+
+<section class="body-content">
+
+<div class="sidebar"  style="background-color:#444;">
+
+	<table class="tg-sidebar">
+
+
+	<tr>
+		<th class="tg-sidebar-4kyz" colspan="1">Create a new...</th>
+	</tr>
+
+	<tr>
+		<td style="background-color:#444;"><a href="#">Arrest Charge Details</a></td>
+	</tr>
+
+	<tr>
+		<td style="background-color:#444;"><a href="#">Bail</a></td>
+	</tr>
+
+
+	<tr>
+		<td style="background-color:#444;"><a href="./create/newcase.html">Case &nbsp;</a></td>
+	</tr>
+
+
+	<tr>
+		<td style="background-color:#444;"><a href="#">Charge</a></td>
+	</tr>
+
+
+	<tr>
+		<td style="background-color:#444;"><a href="#">Court</a></td>
+	</tr>
+
+
+	<tr>
+		<td style="background-color:#444;"><a href="#">Defendant</a></td>
+	</tr>
+
+
+	<tr>
+		<td style="background-color:#444;"><a href="#">Defense</a></td>
+	</tr>
+
+
+	<tr>
+		<td style="background-color:#444;"><a href="#">Hearing</a></td>
+	</tr>
+
+
+	<tr>
+		<td style="background-color:#444;"><a href="#">Judge</a></td>
+	</tr>
+
+
+	<tr>
+		<td style="background-color:#444;"><a href="#">Motion</a></td>
+	</tr>
+
+
+	<tr>
+		<td style="background-color:#444;"><a href="#">Organized Crime Group</a></td>
+	</tr>
+
+
+	<tr>
+		<td style="background-color:#444;"><a href="#">Prosecutor</a></td>
+	</tr>
+
+
+	<tr>
+		<td style="background-color:#444;"><a href="#">Sentence</a></td>
+	</tr>
+
+
+	<tr>
+		<td style="background-color:#444;"><a href="#">Victim</a></td>
+	</tr>
+
+
+	<tr>
+		<td style="background-color:#444;"><a href="#">  </a></td>
+	</tr>
+
+	</table>
+
+</div>
+
+
+<div class="page-content">
+
+<table class="tg" style="margin-top: -900px;">
+
+	<form>
+
+  		<tr>
+    		<th class="tg-4kyz" colspan="2">Batch Upload...</th>
+  		</tr>
+
+  		<tr>
+			<td><input type="file" style="font-size:13px; padding-top:20px; padding-left:10px; padding-right:150px; margin-right:10px; width:300px; height:30px; background-color:#000; border:none; color:#fff;" value="Choose File" name="upload_btn"></td>
+  		</tr>
+
+</table>
+
+		<input id="submit" type="submit" style="font-size:20px; margin-left:0px; width:200px; height:50px; background-color:#db1a03; border:none; color:#fff;" value="Upload New Batch" name="case_submit">
+
+	</form>
+
+
+		<h4 style="color:#db1a03;  margin-top:100px; margin-bottom:400px; ">*Uploading...</h4>
+
+	</div>
+
+
+</section>
+
+
+	<div id="footer">
+		Admin Control Panel HTD V 0.1 | <a target="_blank" href="http://humantraffickingdata.org" title="Human Trafficking Data Website">Human Trafficking Data</a>
+        <p>&copy; @DateTime.Now.Year - Judge Frog</p>
+    </div>
+
+</div>
+
+
+</body>
+
+
+
+
+
+</html>
