@@ -14,10 +14,10 @@ namespace SeniorDesignWebApp
     
     public partial class bail
     {
-        public long BailId { get; set; }
-        public bool Type { get; set; }
+        public int BailId { get; set; }
+        public int Type { get; set; }
         public double Amount { get; set; }
-        public long ArrestChargeDetails_ACDId { get; set; }
+        public int ArrestChargeDetails_ACDId { get; set; }
     
         public virtual arrestchargedetail arrestchargedetail { get; set; }
     }

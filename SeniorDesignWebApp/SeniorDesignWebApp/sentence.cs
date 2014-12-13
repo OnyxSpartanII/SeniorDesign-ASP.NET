@@ -19,15 +19,15 @@ namespace SeniorDesignWebApp
             this.casetables = new HashSet<casetable>();
         }
     
-        public long SentenceId { get; set; }
+        public int SentenceId { get; set; }
         public System.DateTime DateTerminated { get; set; }
         public System.DateTime Date { get; set; }
-        public long Total { get; set; }
-        public long Restitution { get; set; }
+        public int Total { get; set; }
+        public double Restitution { get; set; }
         public bool AssetForfeit { get; set; }
         public bool Appeal { get; set; }
-        public long SupervisedRelease { get; set; }
-        public long Probation { get; set; }
+        public int SupervisedRelease { get; set; }
+        public int Probation { get; set; }
     
         public virtual ICollection<casetable> casetables { get; set; }
     }

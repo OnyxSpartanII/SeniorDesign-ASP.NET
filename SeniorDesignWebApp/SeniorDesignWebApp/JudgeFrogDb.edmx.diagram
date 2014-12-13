@@ -4,24 +4,24 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="f9eea8d543f5492f8038b3bd49acb73f" Name="Diagram1" ZoomLevel="137">
-        <EntityTypeShape EntityType="judgefrogModel.organizedcrimegroup" Width="1.5" PointX="9.25" PointY="9.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="judgefrogModel.victim" Width="1.5" PointX="6.375" PointY="15.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="judgefrogModel.sentence" Width="1.5" PointX="3.625" PointY="6.125" />
-        <EntityTypeShape EntityType="judgefrogModel.charge" Width="1.5" PointX="3.375" PointY="15.625" />
-        <EntityTypeShape EntityType="judgefrogModel.casetable" Width="1.5" PointX="5.125" PointY="9.75" />
-        <AssociationConnector Association="judgefrogModel.fk_Case_SentenceId" />
-        <AssociationConnector Association="judgefrogModel.fk_Case_VictimsId" />
-        <AssociationConnector Association="judgefrogModel.case_has_organizedcrimegroup" />
-        <EntityTypeShape EntityType="judgefrogModel.bail" Width="1.5" PointX="1.125" PointY="10.25" />
-        <EntityTypeShape EntityType="judgefrogModel.arrestchargedetail" Width="1.5" PointX="2.875" PointY="11.25" />
-        <EntityTypeShape EntityType="judgefrogModel.judge" Width="1.5" PointX="7.375" PointY="10.75" />
+      <Diagram DiagramId="f9eea8d543f5492f8038b3bd49acb73f" Name="Diagram1" ZoomLevel="49">
+        <EntityTypeShape EntityType="judgefrogModel.arrestchargedetail" Width="1.5" PointX="0.75" PointY="7.5" />
+        <EntityTypeShape EntityType="judgefrogModel.bail" Width="1.5" PointX="3" PointY="19.625" />
+        <EntityTypeShape EntityType="judgefrogModel.casetable" Width="1.5" PointX="6" PointY="7.25" />
+        <EntityTypeShape EntityType="judgefrogModel.charge" Width="1.5" PointX="3" PointY="6.125" />
+        <EntityTypeShape EntityType="judgefrogModel.defendant" Width="1.5" PointX="8.25" PointY="11.125" />
+        <EntityTypeShape EntityType="judgefrogModel.judge" Width="1.5" PointX="8.25" PointY="5.125" />
+        <EntityTypeShape EntityType="judgefrogModel.organizedcrimegroup" Width="1.5" PointX="8.25" PointY="8.25" />
+        <EntityTypeShape EntityType="judgefrogModel.sentence" Width="1.5" PointX="3.75" PointY="11.25" />
+        <EntityTypeShape EntityType="judgefrogModel.victim" Width="1.5" PointX="3.75" PointY="2.375" />
         <AssociationConnector Association="judgefrogModel.fk_Bail_ArrestChargeDetails1" />
         <AssociationConnector Association="judgefrogModel.fk_Case_ACDId" />
         <AssociationConnector Association="judgefrogModel.fk_Charge_ArrestChargeDetails1" />
-        <AssociationConnector Association="judgefrogModel.case_has_judge" />
-        <EntityTypeShape EntityType="judgefrogModel.defendant" Width="1.5" PointX="7.125" PointY="7.125" />
+        <AssociationConnector Association="judgefrogModel.fk_Case_SentenceId" />
+        <AssociationConnector Association="judgefrogModel.fk_Case_VictimsId" />
         <AssociationConnector Association="judgefrogModel.case_has_defendant" />
+        <AssociationConnector Association="judgefrogModel.case_has_judge" />
+        <AssociationConnector Association="judgefrogModel.case_has_organizedcrimegroup" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

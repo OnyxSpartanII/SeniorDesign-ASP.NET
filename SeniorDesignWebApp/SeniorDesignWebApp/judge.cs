@@ -19,7 +19,7 @@ namespace SeniorDesignWebApp
             this.casetables = new HashSet<casetable>();
         }
     
-        public long JudgeId { get; set; }
+        public int JudgeId { get; set; }
         public string Name { get; set; }
         public int Race { get; set; }
         public bool Gender { get; set; }

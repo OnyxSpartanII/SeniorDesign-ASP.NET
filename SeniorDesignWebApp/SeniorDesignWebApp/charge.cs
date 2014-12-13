@@ -14,18 +14,18 @@ namespace SeniorDesignWebApp
     
     public partial class charge
     {
-        public long ChargeId { get; set; }
-        public long ArrestChargeDetails_Id { get; set; }
-        public long Counts { get; set; }
-        public long CountsNolelProssed { get; set; }
+        public int ChargeId { get; set; }
+        public int ArrestChargeDetails_Id { get; set; }
+        public int Counts { get; set; }
+        public int CountsNolelProssed { get; set; }
         public string Statute { get; set; }
-        public long PleaDismissed { get; set; }
-        public long PleaGuilty { get; set; }
-        public long TrialGuilty { get; set; }
-        public long TrialNotGuilty { get; set; }
-        public long Fines { get; set; }
-        public long Sentence { get; set; }
-        public long Probation { get; set; }
+        public int PleaDismissed { get; set; }
+        public int PleaGuilty { get; set; }
+        public int TrialGuilty { get; set; }
+        public int TrialNotGuilty { get; set; }
+        public int Fines { get; set; }
+        public int Sentence { get; set; }
+        public int Probation { get; set; }
     
         public virtual arrestchargedetail arrestchargedetail { get; set; }
     }

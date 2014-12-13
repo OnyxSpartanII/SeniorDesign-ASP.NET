@@ -19,7 +19,7 @@ namespace SeniorDesignWebApp
             this.casetables = new HashSet<casetable>();
         }
     
-        public long OCGId { get; set; }
+        public int OCGId { get; set; }
         public string Name { get; set; }
         public int Size { get; set; }
         public int Scope { get; set; }

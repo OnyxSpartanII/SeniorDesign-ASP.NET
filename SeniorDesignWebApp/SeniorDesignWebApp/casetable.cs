@@ -16,29 +16,32 @@ namespace SeniorDesignWebApp
     {
         public casetable()
         {
-            this.organizedcrimegroups = new HashSet<organizedcrimegroup>();
-            this.judges = new HashSet<judge>();
             this.defendants = new HashSet<defendant>();
+            this.judges = new HashSet<judge>();
+            this.organizedcrimegroups = new HashSet<organizedcrimegroup>();
+        }
+
+        public string ToString()
+        {
+            return this.Name;
         }
     
-        public long CaseId { get; set; }
+        public int CaseId { get; set; }
         public string Name { get; set; }
         public string Number { get; set; }
         public bool Status { get; set; }
-        public Nullable<long> Num_Defendants { get; set; }
+        public int Num_Defendants { get; set; }
         public string State { get; set; }
-        public long FederalDistrict { get; set; }
-        public long CourtId { get; set; }
-        public long DefenseId { get; set; }
-        public long VictimsId { get; set; }
-        public long ACDId { get; set; }
-        public long SentenceId { get; set; }
+        public int FederalDistrict { get; set; }
+        public int VictimsId { get; set; }
+        public int ACDId { get; set; }
+        public int SentenceId { get; set; }
     
+        public virtual arrestchargedetail arrestchargedetail { get; set; }
         public virtual sentence sentence { get; set; }
         public virtual victim victim { get; set; }
-        public virtual ICollection<organizedcrimegroup> organizedcrimegroups { get; set; }
-        public virtual arrestchargedetail arrestchargedetail { get; set; }
-        public virtual ICollection<judge> judges { get; set; }
         public virtual ICollection<defendant> defendants { get; set; }
+        public virtual ICollection<judge> judges { get; set; }
+        public virtual ICollection<organizedcrimegroup> organizedcrimegroups { get; set; }
     }
 }

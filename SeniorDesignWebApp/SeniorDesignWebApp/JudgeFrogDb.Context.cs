@@ -25,14 +25,14 @@ namespace SeniorDesignWebApp
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<organizedcrimegroup> organizedcrimegroups { get; set; }
-        public virtual DbSet<victim> victims { get; set; }
-        public virtual DbSet<sentence> sentences { get; set; }
-        public virtual DbSet<charge> charges { get; set; }
-        public virtual DbSet<casetable> casetables { get; set; }
-        public virtual DbSet<bail> bails { get; set; }
         public virtual DbSet<arrestchargedetail> arrestchargedetails { get; set; }
-        public virtual DbSet<judge> judges { get; set; }
+        public virtual DbSet<bail> bails { get; set; }
+        public virtual DbSet<casetable> casetables { get; set; }
+        public virtual DbSet<charge> charges { get; set; }
         public virtual DbSet<defendant> defendants { get; set; }
+        public virtual DbSet<judge> judges { get; set; }
+        public virtual DbSet<organizedcrimegroup> organizedcrimegroups { get; set; }
+        public virtual DbSet<sentence> sentences { get; set; }
+        public virtual DbSet<victim> victims { get; set; }
     }
 }

@@ -9,7 +9,7 @@
           <Key>
             <PropertyRef Name="ACDId" />
           </Key>
-          <Property Name="ACDId" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ACDId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ChargeDate" Type="date" Nullable="false" />
           <Property Name="ArrestDate" Type="date" Nullable="false" />
           <Property Name="Detained" Type="bool" Nullable="false" />
@@ -24,85 +24,83 @@
           <Key>
             <PropertyRef Name="BailId" />
           </Key>
-          <Property Name="BailId" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Type" Type="bool" Nullable="false" />
+          <Property Name="BailId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Type" Type="int" Nullable="false" />
           <Property Name="Amount" Type="double" Nullable="false" />
-          <Property Name="ArrestChargeDetails_ACDId" Type="uint" Nullable="false" />
+          <Property Name="ArrestChargeDetails_ACDId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="case_has_defendant">
           <Key>
             <PropertyRef Name="Case_CaseId" />
             <PropertyRef Name="Defendant_DefendantId" />
           </Key>
-          <Property Name="Case_CaseId" Type="uint" Nullable="false" />
-          <Property Name="Defendant_DefendantId" Type="uint" Nullable="false" />
+          <Property Name="Case_CaseId" Type="int" Nullable="false" />
+          <Property Name="Defendant_DefendantId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="case_has_judge">
           <Key>
             <PropertyRef Name="Case_CaseId" />
             <PropertyRef Name="Judge_JudgeId" />
           </Key>
-          <Property Name="Case_CaseId" Type="uint" Nullable="false" />
-          <Property Name="Judge_JudgeId" Type="uint" Nullable="false" />
+          <Property Name="Case_CaseId" Type="int" Nullable="false" />
+          <Property Name="Judge_JudgeId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="case_has_organizedcrimegroup">
           <Key>
             <PropertyRef Name="Case_CaseId" />
             <PropertyRef Name="OrganizedCrimeGroup_OCGId" />
           </Key>
-          <Property Name="Case_CaseId" Type="uint" Nullable="false" />
-          <Property Name="OrganizedCrimeGroup_OCGId" Type="uint" Nullable="false" />
+          <Property Name="Case_CaseId" Type="int" Nullable="false" />
+          <Property Name="OrganizedCrimeGroup_OCGId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="casetable">
           <Key>
             <PropertyRef Name="CaseId" />
           </Key>
-          <Property Name="CaseId" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CaseId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="64" Nullable="false" />
           <Property Name="Number" Type="varchar" MaxLength="64" Nullable="false" />
           <Property Name="Status" Type="bool" Nullable="false" />
-          <Property Name="Num_Defendants" Type="uint" />
+          <Property Name="Num_Defendants" Type="int" Nullable="false" />
           <Property Name="State" Type="varchar" MaxLength="2" Nullable="false" />
-          <Property Name="FederalDistrict" Type="uint" Nullable="false" />
-          <Property Name="CourtId" Type="uint" Nullable="false" />
-          <Property Name="DefenseId" Type="uint" Nullable="false" />
-          <Property Name="VictimsId" Type="uint" Nullable="false" />
-          <Property Name="ACDId" Type="uint" Nullable="false" />
-          <Property Name="SentenceId" Type="uint" Nullable="false" />
+          <Property Name="FederalDistrict" Type="int" Nullable="false" />
+          <Property Name="VictimsId" Type="int" Nullable="false" />
+          <Property Name="ACDId" Type="int" Nullable="false" />
+          <Property Name="SentenceId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="charge">
           <Key>
             <PropertyRef Name="ChargeId" />
           </Key>
-          <Property Name="ChargeId" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ArrestChargeDetails_Id" Type="uint" Nullable="false" />
-          <Property Name="Counts" Type="uint" Nullable="false" />
-          <Property Name="CountsNolelProssed" Type="uint" Nullable="false" />
+          <Property Name="ChargeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ArrestChargeDetails_Id" Type="int" Nullable="false" />
+          <Property Name="Counts" Type="int" Nullable="false" />
+          <Property Name="CountsNolelProssed" Type="int" Nullable="false" />
           <Property Name="Statute" Type="varchar" MaxLength="45" Nullable="false" />
-          <Property Name="PleaDismissed" Type="uint" Nullable="false" />
-          <Property Name="PleaGuilty" Type="uint" Nullable="false" />
-          <Property Name="TrialGuilty" Type="uint" Nullable="false" />
-          <Property Name="TrialNotGuilty" Type="uint" Nullable="false" />
-          <Property Name="Fines" Type="uint" Nullable="false" />
-          <Property Name="Sentence" Type="uint" Nullable="false" />
-          <Property Name="Probation" Type="uint" Nullable="false" />
+          <Property Name="PleaDismissed" Type="int" Nullable="false" />
+          <Property Name="PleaGuilty" Type="int" Nullable="false" />
+          <Property Name="TrialGuilty" Type="int" Nullable="false" />
+          <Property Name="TrialNotGuilty" Type="int" Nullable="false" />
+          <Property Name="Fines" Type="int" Nullable="false" />
+          <Property Name="Sentence" Type="int" Nullable="false" />
+          <Property Name="Probation" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="defendant">
           <Key>
             <PropertyRef Name="DefendantId" />
           </Key>
-          <Property Name="DefendantId" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DefendantId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Firstname" Type="varchar" MaxLength="45" Nullable="false" />
           <Property Name="Lastname" Type="varchar" MaxLength="45" Nullable="false" />
           <Property Name="Gender" Type="bool" Nullable="false" />
-          <Property Name="BirthDate" Type="date" Nullable="false" />
+          <Property Name="BirthDate" Type="int" Nullable="false" />
           <Property Name="Race" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="judge">
           <Key>
             <PropertyRef Name="JudgeId" />
           </Key>
-          <Property Name="JudgeId" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="JudgeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="64" Nullable="false" />
           <Property Name="Race" Type="int" Nullable="false" />
           <Property Name="Gender" Type="bool" Nullable="false" />
@@ -113,7 +111,7 @@
           <Key>
             <PropertyRef Name="OCGId" />
           </Key>
-          <Property Name="OCGId" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OCGId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="45" Nullable="false" />
           <Property Name="Size" Type="int" Nullable="false" />
           <Property Name="Scope" Type="int" Nullable="false" />
@@ -123,21 +121,21 @@
           <Key>
             <PropertyRef Name="SentenceId" />
           </Key>
-          <Property Name="SentenceId" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SentenceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="DateTerminated" Type="date" Nullable="false" />
           <Property Name="Date" Type="date" Nullable="false" />
-          <Property Name="Total" Type="uint" Nullable="false" />
-          <Property Name="Restitution" Type="uint" Nullable="false" />
+          <Property Name="Total" Type="int" Nullable="false" />
+          <Property Name="Restitution" Type="double" Nullable="false" />
           <Property Name="AssetForfeit" Type="bool" Nullable="false" />
           <Property Name="Appeal" Type="bool" Nullable="false" />
-          <Property Name="SupervisedRelease" Type="uint" Nullable="false" />
-          <Property Name="Probation" Type="uint" Nullable="false" />
+          <Property Name="SupervisedRelease" Type="int" Nullable="false" />
+          <Property Name="Probation" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="victims">
           <Key>
             <PropertyRef Name="VictimsId" />
           </Key>
-          <Property Name="VictimsId" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VictimsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Total" Type="int" Nullable="false" />
           <Property Name="Minor" Type="int" Nullable="false" />
           <Property Name="Foreigner" Type="int" Nullable="false" />
@@ -337,49 +335,16 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="judgefrogModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="organizedcrimegroup">
-          <Key>
-            <PropertyRef Name="OCGId" />
-          </Key>
-          <Property Name="OCGId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Size" Type="Int32" Nullable="false" />
-          <Property Name="Scope" Type="Int32" Nullable="false" />
-          <Property Name="Race" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="casetables" Relationship="judgefrogModel.case_has_organizedcrimegroup" FromRole="organizedcrimegroup" ToRole="casetable" />
-        </EntityType>
-        <EntityType Name="victim">
-          <Key>
-            <PropertyRef Name="VictimsId" />
-          </Key>
-          <Property Name="VictimsId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Total" Type="Int32" Nullable="false" />
-          <Property Name="Minor" Type="Int32" Nullable="false" />
-          <Property Name="Foreigner" Type="Int32" Nullable="false" />
-          <Property Name="Female" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="casetables" Relationship="judgefrogModel.fk_Case_VictimsId" FromRole="victim" ToRole="casetable" />
-        </EntityType>
         <EntityContainer Name="judgefrogEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="organizedcrimegroups" EntityType="Self.organizedcrimegroup" />
-          <EntitySet Name="victims" EntityType="Self.victim" />
-          <EntitySet Name="sentences" EntityType="judgefrogModel.sentence" />
-          <EntitySet Name="charges" EntityType="judgefrogModel.charge" />
-          <EntitySet Name="casetables" EntityType="judgefrogModel.casetable" />
-          <AssociationSet Name="fk_Case_SentenceId" Association="judgefrogModel.fk_Case_SentenceId">
-            <End Role="sentence" EntitySet="sentences" />
-            <End Role="casetable" EntitySet="casetables" />
-          </AssociationSet>
-          <AssociationSet Name="fk_Case_VictimsId" Association="judgefrogModel.fk_Case_VictimsId">
-            <End Role="victim" EntitySet="victims" />
-            <End Role="casetable" EntitySet="casetables" />
-          </AssociationSet>
-          <AssociationSet Name="case_has_organizedcrimegroup" Association="judgefrogModel.case_has_organizedcrimegroup">
-            <End Role="casetable" EntitySet="casetables" />
-            <End Role="organizedcrimegroup" EntitySet="organizedcrimegroups" />
-          </AssociationSet>
-          <EntitySet Name="bails" EntityType="judgefrogModel.bail" />
           <EntitySet Name="arrestchargedetails" EntityType="judgefrogModel.arrestchargedetail" />
+          <EntitySet Name="bails" EntityType="judgefrogModel.bail" />
+          <EntitySet Name="casetables" EntityType="judgefrogModel.casetable" />
+          <EntitySet Name="charges" EntityType="judgefrogModel.charge" />
+          <EntitySet Name="defendants" EntityType="judgefrogModel.defendant" />
           <EntitySet Name="judges" EntityType="judgefrogModel.judge" />
+          <EntitySet Name="organizedcrimegroups" EntityType="judgefrogModel.organizedcrimegroup" />
+          <EntitySet Name="sentences" EntityType="judgefrogModel.sentence" />
+          <EntitySet Name="victims" EntityType="judgefrogModel.victim" />
           <AssociationSet Name="fk_Bail_ArrestChargeDetails1" Association="judgefrogModel.fk_Bail_ArrestChargeDetails1">
             <End Role="arrestchargedetail" EntitySet="arrestchargedetails" />
             <End Role="bail" EntitySet="bails" />
@@ -392,115 +357,32 @@
             <End Role="arrestchargedetail" EntitySet="arrestchargedetails" />
             <End Role="charge" EntitySet="charges" />
           </AssociationSet>
-          <AssociationSet Name="case_has_judge" Association="judgefrogModel.case_has_judge">
+          <AssociationSet Name="fk_Case_SentenceId" Association="judgefrogModel.fk_Case_SentenceId">
+            <End Role="sentence" EntitySet="sentences" />
             <End Role="casetable" EntitySet="casetables" />
-            <End Role="judge" EntitySet="judges" />
           </AssociationSet>
-          <EntitySet Name="defendants" EntityType="judgefrogModel.defendant" />
+          <AssociationSet Name="fk_Case_VictimsId" Association="judgefrogModel.fk_Case_VictimsId">
+            <End Role="victim" EntitySet="victims" />
+            <End Role="casetable" EntitySet="casetables" />
+          </AssociationSet>
           <AssociationSet Name="case_has_defendant" Association="judgefrogModel.case_has_defendant">
             <End Role="casetable" EntitySet="casetables" />
             <End Role="defendant" EntitySet="defendants" />
           </AssociationSet>
+          <AssociationSet Name="case_has_judge" Association="judgefrogModel.case_has_judge">
+            <End Role="casetable" EntitySet="casetables" />
+            <End Role="judge" EntitySet="judges" />
+          </AssociationSet>
+          <AssociationSet Name="case_has_organizedcrimegroup" Association="judgefrogModel.case_has_organizedcrimegroup">
+            <End Role="casetable" EntitySet="casetables" />
+            <End Role="organizedcrimegroup" EntitySet="organizedcrimegroups" />
+          </AssociationSet>
         </EntityContainer>
-        <EntityType Name="sentence">
-          <Key>
-            <PropertyRef Name="SentenceId" />
-          </Key>
-          <Property Name="SentenceId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="DateTerminated" Type="DateTime" Nullable="false" />
-          <Property Name="Date" Type="DateTime" Nullable="false" />
-          <Property Name="Total" Type="Int64" Nullable="false" />
-          <Property Name="Restitution" Type="Int64" Nullable="false" />
-          <Property Name="AssetForfeit" Type="Boolean" Nullable="false" />
-          <Property Name="Appeal" Type="Boolean" Nullable="false" />
-          <Property Name="SupervisedRelease" Type="Int64" Nullable="false" />
-          <Property Name="Probation" Type="Int64" Nullable="false" />
-          <NavigationProperty Name="casetables" Relationship="judgefrogModel.fk_Case_SentenceId" FromRole="sentence" ToRole="casetable" />
-        </EntityType>
-        <EntityType Name="charge">
-          <Key>
-            <PropertyRef Name="ChargeId" />
-          </Key>
-          <Property Name="ChargeId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ArrestChargeDetails_Id" Type="Int64" Nullable="false" />
-          <Property Name="Counts" Type="Int64" Nullable="false" />
-          <Property Name="CountsNolelProssed" Type="Int64" Nullable="false" />
-          <Property Name="Statute" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
-          <Property Name="PleaDismissed" Type="Int64" Nullable="false" />
-          <Property Name="PleaGuilty" Type="Int64" Nullable="false" />
-          <Property Name="TrialGuilty" Type="Int64" Nullable="false" />
-          <Property Name="TrialNotGuilty" Type="Int64" Nullable="false" />
-          <Property Name="Fines" Type="Int64" Nullable="false" />
-          <Property Name="Sentence" Type="Int64" Nullable="false" />
-          <Property Name="Probation" Type="Int64" Nullable="false" />
-          <NavigationProperty Name="arrestchargedetail" Relationship="judgefrogModel.fk_Charge_ArrestChargeDetails1" FromRole="charge" ToRole="arrestchargedetail" />
-        </EntityType>
-        <EntityType Name="casetable">
-          <Key>
-            <PropertyRef Name="CaseId" />
-          </Key>
-          <Property Name="CaseId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Name="Number" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Name="Status" Type="Boolean" Nullable="false" />
-          <Property Name="Num_Defendants" Type="Int64" />
-          <Property Name="State" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Name="FederalDistrict" Type="Int64" Nullable="false" />
-          <Property Name="CourtId" Type="Int64" Nullable="false" />
-          <Property Name="DefenseId" Type="Int64" Nullable="false" />
-          <Property Name="VictimsId" Type="Int64" Nullable="false" />
-          <Property Name="ACDId" Type="Int64" Nullable="false" />
-          <Property Name="SentenceId" Type="Int64" Nullable="false" />
-          <NavigationProperty Name="sentence" Relationship="judgefrogModel.fk_Case_SentenceId" FromRole="casetable" ToRole="sentence" />
-          <NavigationProperty Name="victim" Relationship="judgefrogModel.fk_Case_VictimsId" FromRole="casetable" ToRole="victim" />
-          <NavigationProperty Name="organizedcrimegroups" Relationship="judgefrogModel.case_has_organizedcrimegroup" FromRole="casetable" ToRole="organizedcrimegroup" />
-          <NavigationProperty Name="arrestchargedetail" Relationship="judgefrogModel.fk_Case_ACDId" FromRole="casetable" ToRole="arrestchargedetail" />
-          <NavigationProperty Name="judges" Relationship="judgefrogModel.case_has_judge" FromRole="casetable" ToRole="judge" />
-          <NavigationProperty Name="defendants" Relationship="judgefrogModel.case_has_defendant" FromRole="casetable" ToRole="defendant" />
-        </EntityType>
-        <Association Name="fk_Case_SentenceId">
-          <End Type="judgefrogModel.sentence" Role="sentence" Multiplicity="1" />
-          <End Type="judgefrogModel.casetable" Role="casetable" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="sentence">
-              <PropertyRef Name="SentenceId" />
-            </Principal>
-            <Dependent Role="casetable">
-              <PropertyRef Name="SentenceId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_Case_VictimsId">
-          <End Type="judgefrogModel.victim" Role="victim" Multiplicity="1" />
-          <End Type="judgefrogModel.casetable" Role="casetable" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="victim">
-              <PropertyRef Name="VictimsId" />
-            </Principal>
-            <Dependent Role="casetable">
-              <PropertyRef Name="VictimsId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="case_has_organizedcrimegroup">
-          <End Type="judgefrogModel.casetable" Role="casetable" Multiplicity="*" />
-          <End Type="judgefrogModel.organizedcrimegroup" Role="organizedcrimegroup" Multiplicity="*" />
-        </Association>
-        <EntityType Name="bail">
-          <Key>
-            <PropertyRef Name="BailId" />
-          </Key>
-          <Property Name="BailId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Type" Type="Boolean" Nullable="false" />
-          <Property Name="Amount" Type="Double" Nullable="false" />
-          <Property Name="ArrestChargeDetails_ACDId" Type="Int64" Nullable="false" />
-          <NavigationProperty Name="arrestchargedetail" Relationship="judgefrogModel.fk_Bail_ArrestChargeDetails1" FromRole="bail" ToRole="arrestchargedetail" />
-        </EntityType>
         <EntityType Name="arrestchargedetail">
           <Key>
             <PropertyRef Name="ACDId" />
           </Key>
-          <Property Name="ACDId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ACDId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ChargeDate" Type="DateTime" Nullable="false" />
           <Property Name="ArrestDate" Type="DateTime" Nullable="false" />
           <Property Name="Detained" Type="Boolean" Nullable="false" />
@@ -514,17 +396,115 @@
           <NavigationProperty Name="casetables" Relationship="judgefrogModel.fk_Case_ACDId" FromRole="arrestchargedetail" ToRole="casetable" />
           <NavigationProperty Name="charges" Relationship="judgefrogModel.fk_Charge_ArrestChargeDetails1" FromRole="arrestchargedetail" ToRole="charge" />
         </EntityType>
+        <EntityType Name="bail">
+          <Key>
+            <PropertyRef Name="BailId" />
+          </Key>
+          <Property Name="BailId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="Int32" Nullable="false" />
+          <Property Name="Amount" Type="Double" Nullable="false" />
+          <Property Name="ArrestChargeDetails_ACDId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="arrestchargedetail" Relationship="judgefrogModel.fk_Bail_ArrestChargeDetails1" FromRole="bail" ToRole="arrestchargedetail" />
+        </EntityType>
+        <EntityType Name="casetable">
+          <Key>
+            <PropertyRef Name="CaseId" />
+          </Key>
+          <Property Name="CaseId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="Number" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+          <Property Name="Num_Defendants" Type="Int32" Nullable="false" />
+          <Property Name="State" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="FederalDistrict" Type="Int32" Nullable="false" />
+          <Property Name="VictimsId" Type="Int32" Nullable="false" />
+          <Property Name="ACDId" Type="Int32" Nullable="false" />
+          <Property Name="SentenceId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="arrestchargedetail" Relationship="judgefrogModel.fk_Case_ACDId" FromRole="casetable" ToRole="arrestchargedetail" />
+          <NavigationProperty Name="sentence" Relationship="judgefrogModel.fk_Case_SentenceId" FromRole="casetable" ToRole="sentence" />
+          <NavigationProperty Name="victim" Relationship="judgefrogModel.fk_Case_VictimsId" FromRole="casetable" ToRole="victim" />
+          <NavigationProperty Name="defendants" Relationship="judgefrogModel.case_has_defendant" FromRole="casetable" ToRole="defendant" />
+          <NavigationProperty Name="judges" Relationship="judgefrogModel.case_has_judge" FromRole="casetable" ToRole="judge" />
+          <NavigationProperty Name="organizedcrimegroups" Relationship="judgefrogModel.case_has_organizedcrimegroup" FromRole="casetable" ToRole="organizedcrimegroup" />
+        </EntityType>
+        <EntityType Name="charge">
+          <Key>
+            <PropertyRef Name="ChargeId" />
+          </Key>
+          <Property Name="ChargeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ArrestChargeDetails_Id" Type="Int32" Nullable="false" />
+          <Property Name="Counts" Type="Int32" Nullable="false" />
+          <Property Name="CountsNolelProssed" Type="Int32" Nullable="false" />
+          <Property Name="Statute" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="PleaDismissed" Type="Int32" Nullable="false" />
+          <Property Name="PleaGuilty" Type="Int32" Nullable="false" />
+          <Property Name="TrialGuilty" Type="Int32" Nullable="false" />
+          <Property Name="TrialNotGuilty" Type="Int32" Nullable="false" />
+          <Property Name="Fines" Type="Int32" Nullable="false" />
+          <Property Name="Sentence" Type="Int32" Nullable="false" />
+          <Property Name="Probation" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="arrestchargedetail" Relationship="judgefrogModel.fk_Charge_ArrestChargeDetails1" FromRole="charge" ToRole="arrestchargedetail" />
+        </EntityType>
+        <EntityType Name="defendant">
+          <Key>
+            <PropertyRef Name="DefendantId" />
+          </Key>
+          <Property Name="DefendantId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Firstname" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Lastname" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Gender" Type="Boolean" Nullable="false" />
+          <Property Name="BirthDate" Type="Int32" Nullable="false" />
+          <Property Name="Race" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="casetables" Relationship="judgefrogModel.case_has_defendant" FromRole="defendant" ToRole="casetable" />
+        </EntityType>
         <EntityType Name="judge">
           <Key>
             <PropertyRef Name="JudgeId" />
           </Key>
-          <Property Name="JudgeId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="JudgeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
           <Property Name="Race" Type="Int32" Nullable="false" />
           <Property Name="Gender" Type="Boolean" Nullable="false" />
           <Property Name="Tenure" Type="Int32" Nullable="false" />
           <Property Name="AppointedBy" Type="Int32" Nullable="false" />
           <NavigationProperty Name="casetables" Relationship="judgefrogModel.case_has_judge" FromRole="judge" ToRole="casetable" />
+        </EntityType>
+        <EntityType Name="organizedcrimegroup">
+          <Key>
+            <PropertyRef Name="OCGId" />
+          </Key>
+          <Property Name="OCGId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Size" Type="Int32" Nullable="false" />
+          <Property Name="Scope" Type="Int32" Nullable="false" />
+          <Property Name="Race" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="casetables" Relationship="judgefrogModel.case_has_organizedcrimegroup" FromRole="organizedcrimegroup" ToRole="casetable" />
+        </EntityType>
+        <EntityType Name="sentence">
+          <Key>
+            <PropertyRef Name="SentenceId" />
+          </Key>
+          <Property Name="SentenceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DateTerminated" Type="DateTime" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" />
+          <Property Name="Total" Type="Int32" Nullable="false" />
+          <Property Name="Restitution" Type="Double" Nullable="false" />
+          <Property Name="AssetForfeit" Type="Boolean" Nullable="false" />
+          <Property Name="Appeal" Type="Boolean" Nullable="false" />
+          <Property Name="SupervisedRelease" Type="Int32" Nullable="false" />
+          <Property Name="Probation" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="casetables" Relationship="judgefrogModel.fk_Case_SentenceId" FromRole="sentence" ToRole="casetable" />
+        </EntityType>
+        <EntityType Name="victim">
+          <Key>
+            <PropertyRef Name="VictimsId" />
+          </Key>
+          <Property Name="VictimsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Total" Type="Int32" Nullable="false" />
+          <Property Name="Minor" Type="Int32" Nullable="false" />
+          <Property Name="Foreigner" Type="Int32" Nullable="false" />
+          <Property Name="Female" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="casetables" Relationship="judgefrogModel.fk_Case_VictimsId" FromRole="victim" ToRole="casetable" />
         </EntityType>
         <Association Name="fk_Bail_ArrestChargeDetails1">
           <End Type="judgefrogModel.arrestchargedetail" Role="arrestchargedetail" Multiplicity="1" />
@@ -562,66 +542,87 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="case_has_judge">
+        <Association Name="fk_Case_SentenceId">
+          <End Type="judgefrogModel.sentence" Role="sentence" Multiplicity="1" />
           <End Type="judgefrogModel.casetable" Role="casetable" Multiplicity="*" />
-          <End Type="judgefrogModel.judge" Role="judge" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sentence">
+              <PropertyRef Name="SentenceId" />
+            </Principal>
+            <Dependent Role="casetable">
+              <PropertyRef Name="SentenceId" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
-        <EntityType Name="defendant">
-          <Key>
-            <PropertyRef Name="DefendantId" />
-          </Key>
-          <Property Name="DefendantId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Firstname" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
-          <Property Name="Lastname" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
-          <Property Name="Gender" Type="Boolean" Nullable="false" />
-          <Property Name="BirthDate" Type="DateTime" Nullable="false" />
-          <Property Name="Race" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="casetables" Relationship="judgefrogModel.case_has_defendant" FromRole="defendant" ToRole="casetable" />
-        </EntityType>
+        <Association Name="fk_Case_VictimsId">
+          <End Type="judgefrogModel.victim" Role="victim" Multiplicity="1" />
+          <End Type="judgefrogModel.casetable" Role="casetable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="victim">
+              <PropertyRef Name="VictimsId" />
+            </Principal>
+            <Dependent Role="casetable">
+              <PropertyRef Name="VictimsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="case_has_defendant">
           <End Type="judgefrogModel.casetable" Role="casetable" Multiplicity="*" />
           <End Type="judgefrogModel.defendant" Role="defendant" Multiplicity="*" />
         </Association>
-      </Schema>
+        <Association Name="case_has_judge">
+          <End Type="judgefrogModel.casetable" Role="casetable" Multiplicity="*" />
+          <End Type="judgefrogModel.judge" Role="judge" Multiplicity="*" />
+        </Association>
+        <Association Name="case_has_organizedcrimegroup">
+          <End Type="judgefrogModel.casetable" Role="casetable" Multiplicity="*" />
+          <End Type="judgefrogModel.organizedcrimegroup" Role="organizedcrimegroup" Multiplicity="*" />
+        </Association>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="judgefrogModelStoreContainer" CdmEntityContainer="judgefrogEntities">
-          <EntitySetMapping Name="organizedcrimegroups">
-            <EntityTypeMapping TypeName="judgefrogModel.organizedcrimegroup">
-              <MappingFragment StoreEntitySet="organizedcrimegroup">
-                <ScalarProperty Name="Race" ColumnName="Race" />
-                <ScalarProperty Name="OCGId" ColumnName="OCGId" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Size" ColumnName="Size" />
-                <ScalarProperty Name="Scope" ColumnName="Scope" />
+          <EntitySetMapping Name="arrestchargedetails">
+            <EntityTypeMapping TypeName="judgefrogModel.arrestchargedetail">
+              <MappingFragment StoreEntitySet="arrestchargedetails">
+                <ScalarProperty Name="Fel_S" ColumnName="Fel_S" />
+                <ScalarProperty Name="Fel_C" ColumnName="Fel_C" />
+                <ScalarProperty Name="MinorSexTraf" ColumnName="MinorSexTraf" />
+                <ScalarProperty Name="AdultSexTraf" ColumnName="AdultSexTraf" />
+                <ScalarProperty Name="LaborTraf" ColumnName="LaborTraf" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="Detained" ColumnName="Detained" />
+                <ScalarProperty Name="ArrestDate" ColumnName="ArrestDate" />
+                <ScalarProperty Name="ChargeDate" ColumnName="ChargeDate" />
+                <ScalarProperty Name="ACDId" ColumnName="ACDId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="victims">
-            <EntityTypeMapping TypeName="judgefrogModel.victim">
-              <MappingFragment StoreEntitySet="victims">
-                <ScalarProperty Name="VictimsId" ColumnName="VictimsId" />
-                <ScalarProperty Name="Total" ColumnName="Total" />
-                <ScalarProperty Name="Minor" ColumnName="Minor" />
-                <ScalarProperty Name="Foreigner" ColumnName="Foreigner" />
-                <ScalarProperty Name="Female" ColumnName="Female" />
+          <EntitySetMapping Name="bails">
+            <EntityTypeMapping TypeName="judgefrogModel.bail">
+              <MappingFragment StoreEntitySet="bail">
+                <ScalarProperty Name="ArrestChargeDetails_ACDId" ColumnName="ArrestChargeDetails_ACDId" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="BailId" ColumnName="BailId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="sentences">
-            <EntityTypeMapping TypeName="judgefrogModel.sentence">
-              <MappingFragment StoreEntitySet="sentence">
-                <ScalarProperty Name="Probation" ColumnName="Probation" />
-                <ScalarProperty Name="SupervisedRelease" ColumnName="SupervisedRelease" />
-                <ScalarProperty Name="Appeal" ColumnName="Appeal" />
-                <ScalarProperty Name="AssetForfeit" ColumnName="AssetForfeit" />
-                <ScalarProperty Name="Restitution" ColumnName="Restitution" />
-                <ScalarProperty Name="Total" ColumnName="Total" />
-                <ScalarProperty Name="Date" ColumnName="Date" />
-                <ScalarProperty Name="DateTerminated" ColumnName="DateTerminated" />
+          <EntitySetMapping Name="casetables">
+            <EntityTypeMapping TypeName="judgefrogModel.casetable">
+              <MappingFragment StoreEntitySet="casetable">
                 <ScalarProperty Name="SentenceId" ColumnName="SentenceId" />
+                <ScalarProperty Name="ACDId" ColumnName="ACDId" />
+                <ScalarProperty Name="VictimsId" ColumnName="VictimsId" />
+                <ScalarProperty Name="FederalDistrict" ColumnName="FederalDistrict" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Num_Defendants" ColumnName="Num_Defendants" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CaseId" ColumnName="CaseId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -643,55 +644,15 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="casetables">
-            <EntityTypeMapping TypeName="judgefrogModel.casetable">
-              <MappingFragment StoreEntitySet="casetable">
-                <ScalarProperty Name="SentenceId" ColumnName="SentenceId" />
-                <ScalarProperty Name="ACDId" ColumnName="ACDId" />
-                <ScalarProperty Name="VictimsId" ColumnName="VictimsId" />
-                <ScalarProperty Name="DefenseId" ColumnName="DefenseId" />
-                <ScalarProperty Name="CourtId" ColumnName="CourtId" />
-                <ScalarProperty Name="FederalDistrict" ColumnName="FederalDistrict" />
-                <ScalarProperty Name="State" ColumnName="State" />
-                <ScalarProperty Name="Num_Defendants" ColumnName="Num_Defendants" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
-                <ScalarProperty Name="Number" ColumnName="Number" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="CaseId" ColumnName="CaseId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <AssociationSetMapping Name="case_has_organizedcrimegroup" TypeName="judgefrogModel.case_has_organizedcrimegroup" StoreEntitySet="case_has_organizedcrimegroup">
-            <EndProperty Name="organizedcrimegroup">
-              <ScalarProperty Name="OCGId" ColumnName="OrganizedCrimeGroup_OCGId" />
-            </EndProperty>
-            <EndProperty Name="casetable">
-              <ScalarProperty Name="CaseId" ColumnName="Case_CaseId" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <EntitySetMapping Name="bails">
-            <EntityTypeMapping TypeName="judgefrogModel.bail">
-              <MappingFragment StoreEntitySet="bail">
-                <ScalarProperty Name="ArrestChargeDetails_ACDId" ColumnName="ArrestChargeDetails_ACDId" />
-                <ScalarProperty Name="Amount" ColumnName="Amount" />
-                <ScalarProperty Name="Type" ColumnName="Type" />
-                <ScalarProperty Name="BailId" ColumnName="BailId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="arrestchargedetails">
-            <EntityTypeMapping TypeName="judgefrogModel.arrestchargedetail">
-              <MappingFragment StoreEntitySet="arrestchargedetails">
-                <ScalarProperty Name="Fel_S" ColumnName="Fel_S" />
-                <ScalarProperty Name="Fel_C" ColumnName="Fel_C" />
-                <ScalarProperty Name="MinorSexTraf" ColumnName="MinorSexTraf" />
-                <ScalarProperty Name="AdultSexTraf" ColumnName="AdultSexTraf" />
-                <ScalarProperty Name="LaborTraf" ColumnName="LaborTraf" />
-                <ScalarProperty Name="Role" ColumnName="Role" />
-                <ScalarProperty Name="Detained" ColumnName="Detained" />
-                <ScalarProperty Name="ArrestDate" ColumnName="ArrestDate" />
-                <ScalarProperty Name="ChargeDate" ColumnName="ChargeDate" />
-                <ScalarProperty Name="ACDId" ColumnName="ACDId" />
+          <EntitySetMapping Name="defendants">
+            <EntityTypeMapping TypeName="judgefrogModel.defendant">
+              <MappingFragment StoreEntitySet="defendant">
+                <ScalarProperty Name="Race" ColumnName="Race" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+                <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+                <ScalarProperty Name="DefendantId" ColumnName="DefendantId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -707,6 +668,51 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="organizedcrimegroups">
+            <EntityTypeMapping TypeName="judgefrogModel.organizedcrimegroup">
+              <MappingFragment StoreEntitySet="organizedcrimegroup">
+                <ScalarProperty Name="Race" ColumnName="Race" />
+                <ScalarProperty Name="Scope" ColumnName="Scope" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="OCGId" ColumnName="OCGId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sentences">
+            <EntityTypeMapping TypeName="judgefrogModel.sentence">
+              <MappingFragment StoreEntitySet="sentence">
+                <ScalarProperty Name="Probation" ColumnName="Probation" />
+                <ScalarProperty Name="SupervisedRelease" ColumnName="SupervisedRelease" />
+                <ScalarProperty Name="Appeal" ColumnName="Appeal" />
+                <ScalarProperty Name="AssetForfeit" ColumnName="AssetForfeit" />
+                <ScalarProperty Name="Restitution" ColumnName="Restitution" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="DateTerminated" ColumnName="DateTerminated" />
+                <ScalarProperty Name="SentenceId" ColumnName="SentenceId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="victims">
+            <EntityTypeMapping TypeName="judgefrogModel.victim">
+              <MappingFragment StoreEntitySet="victims">
+                <ScalarProperty Name="Female" ColumnName="Female" />
+                <ScalarProperty Name="Foreigner" ColumnName="Foreigner" />
+                <ScalarProperty Name="Minor" ColumnName="Minor" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="VictimsId" ColumnName="VictimsId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="case_has_defendant" TypeName="judgefrogModel.case_has_defendant" StoreEntitySet="case_has_defendant">
+            <EndProperty Name="defendant">
+              <ScalarProperty Name="DefendantId" ColumnName="Defendant_DefendantId" />
+            </EndProperty>
+            <EndProperty Name="casetable">
+              <ScalarProperty Name="CaseId" ColumnName="Case_CaseId" />
+            </EndProperty>
+          </AssociationSetMapping>
           <AssociationSetMapping Name="case_has_judge" TypeName="judgefrogModel.case_has_judge" StoreEntitySet="case_has_judge">
             <EndProperty Name="judge">
               <ScalarProperty Name="JudgeId" ColumnName="Judge_JudgeId" />
@@ -715,21 +721,9 @@
               <ScalarProperty Name="CaseId" ColumnName="Case_CaseId" />
             </EndProperty>
           </AssociationSetMapping>
-          <EntitySetMapping Name="defendants">
-            <EntityTypeMapping TypeName="judgefrogModel.defendant">
-              <MappingFragment StoreEntitySet="defendant">
-                <ScalarProperty Name="Race" ColumnName="Race" />
-                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
-                <ScalarProperty Name="Gender" ColumnName="Gender" />
-                <ScalarProperty Name="Lastname" ColumnName="Lastname" />
-                <ScalarProperty Name="Firstname" ColumnName="Firstname" />
-                <ScalarProperty Name="DefendantId" ColumnName="DefendantId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <AssociationSetMapping Name="case_has_defendant" TypeName="judgefrogModel.case_has_defendant" StoreEntitySet="case_has_defendant">
-            <EndProperty Name="defendant">
-              <ScalarProperty Name="DefendantId" ColumnName="Defendant_DefendantId" />
+          <AssociationSetMapping Name="case_has_organizedcrimegroup" TypeName="judgefrogModel.case_has_organizedcrimegroup" StoreEntitySet="case_has_organizedcrimegroup">
+            <EndProperty Name="organizedcrimegroup">
+              <ScalarProperty Name="OCGId" ColumnName="OrganizedCrimeGroup_OCGId" />
             </EndProperty>
             <EndProperty Name="casetable">
               <ScalarProperty Name="CaseId" ColumnName="Case_CaseId" />
